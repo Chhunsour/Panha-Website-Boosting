@@ -753,517 +753,153 @@
     }
 
     /* ==========================================================================
-       HERO CARD (MODERN LIVE GROWTH ENGINE CONSOLE)
+       HERO 3D SHOWCASE VISUAL (CLEAN & EXPENSIVE AESTHETIC)
        ========================================================================== */
-    .hero-console-shell {
+    .hero-visual-shell {
       position: relative;
-      border-radius: var(--radius-xl);
-      padding: 10px;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 249, 255, 0.8));
-      border: 1px solid rgba(2, 132, 199, 0.2);
-      box-shadow: 0 25px 60px -15px rgba(2, 132, 199, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
-    }
-
-    /* Floating Micro-Notification Badges */
-    .floating-pill-top {
-      position: absolute;
-      top: -18px;
-      right: 20px;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      padding: 7px 16px;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(16, 185, 129, 0.35);
-      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.2);
-      font-size: 12px;
-      font-weight: 700;
-      color: #065f46;
       display: flex;
       align-items: center;
-      gap: 8px;
-      z-index: 10;
-      animation: floatBadge 3s ease-in-out infinite alternate;
+      justify-content: center;
+      width: 100%;
+      max-width: 530px;
+      margin: 0 auto;
     }
 
-    .floating-pill-bottom {
+    .hero-visual-glow {
       position: absolute;
-      bottom: -18px;
-      left: 20px;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      padding: 7px 16px;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(2, 132, 199, 0.3);
-      box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.2);
-      font-size: 12px;
-      font-weight: 700;
-      color: #0369a1;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      z-index: 10;
-      animation: floatBadge 3s ease-in-out infinite alternate-reverse;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.15) 0%, rgba(6, 182, 212, 0.08) 45%, transparent 70%);
+      filter: blur(40px);
+      z-index: 0;
+      pointer-events: none;
     }
 
-    @keyframes floatBadge {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-6px); }
-    }
-
-    .growth-console-card {
+    .hero-3d-card {
+      position: relative;
+      z-index: 1;
+      width: 100%;
       background: #ffffff;
-      border-radius: calc(var(--radius-xl) - 4px);
-      border: 1px solid var(--border-medium);
-      padding: 22px;
-      box-shadow: var(--shadow-md);
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      position: relative;
+      border-radius: 28px;
+      padding: 10px;
+      border: 1px solid rgba(2, 132, 199, 0.18);
+      box-shadow: 
+        0 25px 60px -12px rgba(2, 132, 199, 0.15),
+        0 10px 25px -5px rgba(0, 0, 0, 0.05),
+        0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+      overflow: hidden;
     }
 
-    /* Console Top Header */
-    .console-top-bar {
+    .hero-3d-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 
+        0 35px 80px -15px rgba(2, 132, 199, 0.25),
+        0 15px 35px -5px rgba(0, 0, 0, 0.08);
+    }
+
+    .hero-3d-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    /* Minimalist Floating Glass Chips */
+    .hero-glass-chip {
+      position: absolute;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(2, 132, 199, 0.2);
+      border-radius: 18px;
+      padding: 10px 16px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 12px;
+      gap: 12px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
     }
 
-    .console-mac-dots {
-      display: flex;
-      align-items: center;
-      gap: 6px;
+    .chip-top {
+      top: -12px;
+      right: -12px;
+      animation: floatChipTop 5s infinite ease-in-out;
     }
 
-    .mac-dot {
+    .chip-bottom {
+      bottom: -12px;
+      left: -12px;
+      animation: floatChipBottom 5.5s infinite ease-in-out;
+    }
+
+    @keyframes floatChipTop {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes floatChipBottom {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    .chip-dot {
       width: 10px;
       height: 10px;
       border-radius: 50%;
-    }
-    .mac-dot.red { background: #ef4444; }
-    .mac-dot.yellow { background: #f59e0b; }
-    .mac-dot.green { background: #10b981; }
-
-    .console-title-wrap {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .console-brand-text {
-      font-size: 13.5px;
-      font-weight: 800;
-      color: var(--text-primary);
-      letter-spacing: -0.01em;
-    }
-
-    .console-ver-pill {
-      font-size: 10px;
-      font-weight: 800;
-      background: #e0f2fe;
-      color: #0284c7;
-      padding: 2px 7px;
-      border-radius: 4px;
-    }
-
-    .console-status-pill {
-      font-size: 11px;
-      font-weight: 700;
-      color: #059669;
-      background: rgba(16, 185, 129, 0.1);
-      padding: 3px 9px;
-      border-radius: var(--radius-full);
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .pulse-dot-green {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
       background: #10b981;
-      box-shadow: 0 0 6px #10b981;
-    }
-
-    /* Platform Switcher Row */
-    .console-platform-bar {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 6px;
-      background: #f8fafc;
-      padding: 4px;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-subtle);
-    }
-
-    .plat-tab-item {
-      padding: 8px 4px;
-      border-radius: var(--radius-sm);
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--text-secondary);
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .plat-tab-item:hover {
-      color: var(--text-primary);
-      background: rgba(255, 255, 255, 0.7);
-    }
-
-    .plat-tab-item.active {
-      background: #ffffff;
-      color: var(--primary);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      font-weight: 800;
-    }
-
-    .plat-tab-item.active.fb-active { color: #1877f2; }
-    .plat-tab-item.active.ig-active { color: #e1306c; }
-    .plat-tab-item.active.tt-active { color: #0f172a; }
-    .plat-tab-item.active.tg-active { color: #0284c7; }
-
-    /* Live Simulated Account Card */
-    .console-account-preview {
-      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-      border: 1px solid var(--border-medium);
-      border-radius: var(--radius-lg);
-      padding: 14px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .account-preview-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .account-identity {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .account-avatar-ring {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      padding: 2px;
-      background: linear-gradient(135deg, #0284c7, #06b6d4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      box-shadow: 0 0 10px #10b981;
       flex-shrink: 0;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
     }
 
-    .account-avatar-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      display: block;
-    }
-
-    .account-avatar-inner {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: #0f172a;
+    .chip-icon-box {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #0284c7, #06b6d4);
       color: #ffffff;
-      font-size: 13px;
-      font-weight: 800;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      flex-shrink: 0;
     }
 
-    .modal-brand-logo {
-      width: 54px;
-      height: 54px;
-      border-radius: 14px;
-      border: 1.5px solid rgba(2, 132, 199, 0.25);
-      box-shadow: 0 4px 16px rgba(2, 132, 199, 0.2);
-      margin: 0 auto 12px auto;
-      display: block;
-      object-fit: cover;
-    }
-
-    .account-meta {
+    .chip-text {
       display: flex;
       flex-direction: column;
     }
 
-    .account-name-row {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 14px;
+    .chip-title {
+      font-size: 13px;
       font-weight: 800;
       color: var(--text-primary);
+      line-height: 1.2;
     }
 
-    .verified-blue-badge {
-      width: 15px;
-      height: 15px;
-      background: #0284c7;
-      color: #ffffff;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 9px;
-      font-weight: 800;
-    }
-
-    .account-handle-row {
-      font-size: 11.5px;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .instant-speed-pill {
+    .chip-sub {
       font-size: 10.5px;
-      font-weight: 800;
-      color: #0284c7;
-      background: #e0f2fe;
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    /* Live Growth Trajectory Bar */
-    .growth-trajectory-box {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .trajectory-numbers {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 12.5px;
-    }
-
-    .traj-current {
-      color: var(--text-secondary);
       font-weight: 600;
-    }
-
-    .traj-target {
-      font-weight: 800;
-      color: #0284c7;
-    }
-
-    .traj-surge-tag {
-      background: #dcfce7;
-      color: #15803d;
-      padding: 1px 6px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 800;
-      margin-left: 4px;
-    }
-
-    .growth-progress-track {
-      width: 100%;
-      height: 8px;
-      background: #e2e8f0;
-      border-radius: var(--radius-full);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .growth-progress-fill {
-      height: 100%;
-      width: 78%;
-      background: linear-gradient(90deg, #0284c7 0%, #06b6d4 100%);
-      border-radius: var(--radius-full);
-      position: relative;
-      transition: width 0.4s ease;
-      animation: surgePulse 2s infinite ease-in-out;
-    }
-
-    @keyframes surgePulse {
-      0% { filter: brightness(1); }
-      50% { filter: brightness(1.2); }
-      100% { filter: brightness(1); }
-    }
-
-    /* Interactive Package Tiers Grid */
-    .console-tiers-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-
-    .console-tier-card {
-      background: #ffffff;
-      border: 1.5px solid var(--border-medium);
-      border-radius: var(--radius-md);
-      padding: 12px 8px;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3px;
-      position: relative;
-    }
-
-    .console-tier-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12);
-    }
-
-    .console-tier-card.active {
-      border-color: #0284c7;
-      background: #f0f9ff;
-      box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2), 0 6px 16px rgba(2, 132, 199, 0.15);
-    }
-
-    .tier-ribbon-tag {
-      position: absolute;
-      top: -8px;
-      background: linear-gradient(135deg, #0284c7, #0369a1);
-      color: #ffffff;
-      font-size: 8.5px;
-      font-weight: 800;
-      padding: 1px 7px;
-      border-radius: var(--radius-full);
-      letter-spacing: 0.04em;
-    }
-
-    .tier-ribbon-vip {
-      background: linear-gradient(135deg, #d97706, #b45309);
-    }
-
-    .console-tier-amount {
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--text-primary);
-      margin-top: 4px;
-    }
-
-    .console-tier-price {
-      font-size: 15px;
-      font-weight: 800;
-      color: #0284c7;
-    }
-
-    .console-tier-note {
-      font-size: 10px;
       color: var(--text-secondary);
-      font-weight: 600;
-      line-height: 1.3;
+      line-height: 1.2;
+      margin-top: 2px;
     }
 
-    /* Direct Link Input Box */
-    .console-input-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .console-input-label {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text-primary);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .input-field-shell {
-      display: flex;
-      align-items: center;
-      background: #f8fafc;
-      border: 1px solid var(--border-medium);
-      border-radius: var(--radius-md);
-      padding: 8px 12px;
-      gap: 8px;
-      transition: all 0.2s;
-    }
-
-    .input-field-shell:focus-within {
-      background: #ffffff;
-      border-color: #0284c7;
-      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
-    }
-
-    .input-link-field {
-      width: 100%;
-      border: none;
-      background: transparent;
-      outline: none;
-      font-size: 12.5px;
-      font-weight: 500;
-      color: var(--text-primary);
-      font-family: inherit;
-    }
-
-    /* Hero Instant Boost Button */
-    .hero-boost-action-btn {
-      width: 100%;
-      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-      color: #ffffff;
-      border: none;
-      padding: 13px 20px;
-      border-radius: var(--radius-md);
-      font-size: 14px;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
-      transition: all 0.25s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-boost-action-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(2, 132, 199, 0.45);
-    }
-
-    /* Trust Row */
-    .console-trust-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      border-top: 1px solid var(--border-subtle);
-      padding-top: 10px;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--text-secondary);
-    }
-
-    .console-trust-item {
-      display: flex;
-      align-items: center;
-      gap: 5px;
+    @media (max-width: 768px) {
+      .chip-top {
+        top: -8px;
+        right: 0;
+      }
+      .chip-bottom {
+        bottom: -8px;
+        left: 0;
+      }
     }
 
     /* ==========================================================================
@@ -2755,177 +2391,49 @@
                 ទាក់ទងតាម Telegram
               </button>
             </div>
+
+            <!-- Trust Row -->
+            <div style="display: flex; align-items: center; gap: 18px; margin-top: 24px; font-size: 12.5px; color: var(--text-secondary); font-weight: 700; flex-wrap: wrap;">
+              <span style="display: flex; align-items: center; gap: 6px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                គ្មាន Password 100%
+              </span>
+              <span style="display: flex; align-items: center; gap: 6px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                ធានា Lifetime Non-Drop
+              </span>
+              <span style="display: flex; align-items: center; gap: 6px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                Bakong KHQR / ABA
+              </span>
+            </div>
           </div>
 
-          <!-- MODERN LIVE GROWTH ENGINE CONSOLE -->
-          <div class="hero-console-shell">
-            
-            <!-- Top Floating Social Proof Pill -->
-            <div class="floating-pill-top">
-              <span class="pulse-dot-green"></span>
-              <span>🎉 Sok Pisey boosted +25k FB (ABA Verified)</span>
+          <!-- CLEAN HIGH-END 3D VISUAL SHOWCASE -->
+          <div class="hero-visual-shell">
+            <div class="hero-visual-glow"></div>
+
+            <!-- Floating Top Glass Chip -->
+            <div class="hero-glass-chip chip-top">
+              <div class="chip-dot"></div>
+              <div class="chip-text">
+                <span class="chip-title">500,000+ Followers</span>
+                <span class="chip-sub">Delivered Across Cambodia</span>
+              </div>
             </div>
 
-            <!-- Bottom Floating Speed & Guarantee Pill -->
-            <div class="floating-pill-bottom">
-              <span>⚡ Average Delivery: 6.4 mins • 100% Non-Drop</span>
+            <!-- 3D Master Artwork Card -->
+            <div class="hero-3d-card">
+              <img src="assets/hero-growth.jpg" alt="MR PANHA DIGITAL - Social Media Growth Cambodia" class="hero-3d-img">
             </div>
 
-            <div class="growth-console-card">
-
-              <!-- Console Header Bar -->
-              <div class="console-top-bar">
-                <div class="console-mac-dots">
-                  <span class="mac-dot red"></span>
-                  <span class="mac-dot yellow"></span>
-                  <span class="mac-dot green"></span>
-                </div>
-                <div class="console-title-wrap">
-                  <span class="console-brand-text">MR PANHA DIGITAL</span>
-                  <span class="console-ver-pill">ENGINE v3.2</span>
-                </div>
-                <div class="console-status-pill">
-                  <span class="pulse-dot-green"></span>
-                  SYSTEM READY
-                </div>
+            <!-- Floating Bottom Glass Chip -->
+            <div class="hero-glass-chip chip-bottom">
+              <div class="chip-icon-box">⚡</div>
+              <div class="chip-text">
+                <span class="chip-title">5-15 នាទី រហ័សទាន់ចិត្ត</span>
+                <span class="chip-sub">100% Non-Drop & គ្មាន Password</span>
               </div>
-
-              <!-- Platform Switcher Tabs -->
-              <div class="console-platform-bar">
-                <button class="plat-tab-item active fb-active" onclick="selectConsolePlatform(this, 'Facebook')">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                  </svg>
-                  Facebook
-                </button>
-                <button class="plat-tab-item ig-active" onclick="selectConsolePlatform(this, 'Instagram')">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                  </svg>
-                  Instagram
-                </button>
-                <button class="plat-tab-item tt-active" onclick="selectConsolePlatform(this, 'TikTok')">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V9.4a6.33 6.33 0 0 0-.85-.05A6.34 6.34 0 0 0 3.15 15.7a6.34 6.34 0 0 0 10.82 4.48 6.3 6.3 0 0 0 1.87-4.48V8.7a8.28 8.28 0 0 0 4.75 1.49V6.69h-1z"/>
-                  </svg>
-                  TikTok
-                </button>
-                <button class="plat-tab-item tg-active" onclick="selectConsolePlatform(this, 'Telegram')">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.95-1.28 4.92-2.13 5.91-2.54 2.81-1.18 3.39-1.38 3.77-1.39.08 0 .27.02.39.12.1.08.13.2.14.28-.01.06.01.24 0 .38z"/>
-                  </svg>
-                  Telegram
-                </button>
-              </div>
-
-              <!-- Live Simulated Account Growth Box -->
-              <div class="console-account-preview">
-                <div class="account-preview-header">
-                  <div class="account-identity">
-                    <div class="account-avatar-ring">
-                      <img src="assets/brand-logo.jpg" alt="MR PANHA DIGITAL Logo" class="account-avatar-img" id="heroAvatarMark">
-                    </div>
-                    <div class="account-meta">
-                      <div class="account-name-row">
-                        <span id="heroAccountName">Mr Panha Digital</span>
-                        <span class="verified-blue-badge">✓</span>
-                      </div>
-                      <span class="account-handle-row" id="heroAccountHandle">@mrpanhadigital • Official Page</span>
-                    </div>
-                  </div>
-                  <div class="instant-speed-pill">
-                    ⚡ 5-15 MIN BOOST
-                  </div>
-                </div>
-
-                <!-- Growth Trajectory Numbers & Progress -->
-                <div class="growth-trajectory-box">
-                  <div class="trajectory-numbers">
-                    <span class="traj-current">បច្ចុប្បន្ន: <strong>14,250</strong></span>
-                    <span class="traj-target">
-                      គោលដៅ: <strong id="heroLiveGoal">39,250 Follow</strong>
-                      <span class="traj-surge-tag" id="heroSurgeTag">+25,000 (+175%)</span>
-                    </span>
-                  </div>
-                  <div class="growth-progress-track">
-                    <div class="growth-progress-fill" id="heroProgressFill" style="width: 82%;"></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 3 Interactive Boost Package Tiers -->
-              <div class="console-tiers-grid">
-                <!-- Tier 1 -->
-                <div class="console-tier-card" onclick="selectConsoleTier(this, '5,000 Follow', '$14.99', '5,000', 50, '+5,000 (+35%)')">
-                  <span class="console-tier-amount">5,000 Follow</span>
-                  <span class="console-tier-price">$14.99</span>
-                  <span class="console-tier-note">⚡ 5-10m • 0% Pass</span>
-                </div>
-
-                <!-- Tier 2 (Default Active / Popular) -->
-                <div class="console-tier-card active" onclick="selectConsoleTier(this, '25,000 Follow', '$49.99', '25,000', 82, '+25,000 (+175%)')">
-                  <span class="tier-ribbon-tag">🔥 MOST POPULAR</span>
-                  <span class="console-tier-amount">25,000 Follow</span>
-                  <span class="console-tier-price">$49.99</span>
-                  <span class="console-tier-note">✦ Free Likes • Refill</span>
-                </div>
-
-                <!-- Tier 3 -->
-                <div class="console-tier-card" onclick="selectConsoleTier(this, '100,000 Follow', '$149.99', '100,000', 98, '+100,000 (+700%)')">
-                  <span class="tier-ribbon-tag tier-ribbon-vip">👑 VIP DOMINANCE</span>
-                  <span class="console-tier-amount">100k Follow</span>
-                  <span class="console-tier-price">$149.99</span>
-                  <span class="console-tier-note">✦ 24/7 Agent • Non-Drop</span>
-                </div>
-              </div>
-
-              <!-- Direct Link Input Field -->
-              <div class="console-input-wrapper">
-                <label class="console-input-label">
-                  <span>ដាក់តំណភ្ជាប់ Link Page / Profile របស់អ្នក៖</span>
-                  <span style="font-size: 11px; color: #0284c7; font-weight: 600;">🔒 មិនត្រូវការ Password</span>
-                </label>
-                <div class="input-field-shell">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                  </svg>
-                  <input type="url" id="heroPageLinkInput" class="input-link-field" placeholder="https://facebook.com/yourpagename">
-                </div>
-              </div>
-
-              <!-- Hero Instant Boost Action Button -->
-              <button class="hero-boost-action-btn" onclick="orderFromHeroConsole()">
-                <span>🚀 ចាប់ផ្តើមចាក់ Follow ឥឡូវនេះ (BOOST NOW)</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </button>
-
-              <!-- Trust Strip -->
-              <div class="console-trust-row">
-                <div class="console-trust-item">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  <span>គ្មាន Password 100%</span>
-                </div>
-                <div class="console-trust-item">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                  </svg>
-                  <span>ធានា Non-Drop</span>
-                </div>
-                <div class="console-trust-item">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <rect width="20" height="14" x="2" y="5" rx="2"></rect>
-                    <line x1="2" x2="22" y1="10" y2="10"></line>
-                  </svg>
-                  <span>Bakong KHQR / ABA</span>
-                </div>
-              </div>
-
             </div>
           </div>
 
@@ -3961,7 +3469,8 @@
         .fromTo(".hero-desc", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, "-=0.4")
         .fromTo(".metric-item", { y: 25, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.1, duration: 0.5 }, "-=0.3")
         .fromTo(".hero-actions .btn-primary, .hero-actions .btn-secondary", { y: 20, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.1, duration: 0.5, ease: "back.out(1.4)" }, "-=0.3")
-        .fromTo(".hero-console-shell", { y: 40, opacity: 0, scale: 0.95 }, { y: 0, opacity: 1, scale: 1, duration: 0.85, ease: "back.out(1.3)" }, "-=0.5");
+        .fromTo(".hero-visual-shell", { y: 40, opacity: 0, scale: 0.95 }, { y: 0, opacity: 1, scale: 1, duration: 0.85, ease: "back.out(1.3)" }, "-=0.5")
+        .fromTo(".hero-glass-chip", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, stagger: 0.15, duration: 0.6, ease: "back.out(1.6)" }, "-=0.3");
 
       // Number Counters (Hero)
       ScrollTrigger.create({
@@ -3990,17 +3499,17 @@
         }
       });
 
-      // 3D Perspective Tilt on Growth Console Card
-      const heroShell = document.querySelector('.hero-console-shell');
-      const consoleCard = document.querySelector('.growth-console-card');
-      if (heroShell && consoleCard) {
+      // 3D Perspective Tilt on 3D Master Card
+      const heroShell = document.querySelector('.hero-visual-shell');
+      const visualCard = document.querySelector('.hero-3d-card');
+      if (heroShell && visualCard) {
         heroShell.addEventListener('mousemove', (e) => {
           const rect = heroShell.getBoundingClientRect();
           const x = e.clientX - rect.left - rect.width / 2;
           const y = e.clientY - rect.top - rect.height / 2;
           const rotX = -(y / (rect.height / 2)) * 6;
           const rotY = (x / (rect.width / 2)) * 6;
-          gsap.to(consoleCard, {
+          gsap.to(visualCard, {
             rotationX: rotX,
             rotationY: rotY,
             transformPerspective: 1000,
@@ -4010,7 +3519,7 @@
         });
 
         heroShell.addEventListener('mouseleave', () => {
-          gsap.to(consoleCard, {
+          gsap.to(visualCard, {
             rotationX: 0,
             rotationY: 0,
             ease: "power2.out",
