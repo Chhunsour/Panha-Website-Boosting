@@ -1,0 +1,4248 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MR PANHA DIGITAL - សេវាកម្មចាក់ Follower និង Digital Growth ឈានមុខគេនៅកម្ពុជា</title>
+  <meta name="description" content="MR PANHA DIGITAL ផ្តល់សេវាកម្មចាក់ Follower, Like, View លើ Facebook Page & Profile, Instagram, TikTok, Telegram ប្រកបដោយសុវត្ថិភាព 100% គ្មាន Password ធានា Lifetime Non-Drop និងទូទាត់តាម Bakong KHQR។">
+
+  <!-- Favicon Brand Logo -->
+  <link rel="icon" type="image/jpeg" href="assets/brand-logo.jpg">
+  <link rel="apple-touch-icon" href="assets/brand-logo.jpg">
+
+  <!-- Google Fonts: Kantumruy Pro (Khmer) & Plus Jakarta Sans (English) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- GSAP & ScrollTrigger High-Performance Animation Engines -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM TOKENS - LUXURY CLEAN LIGHT PALETTE & MULTI-THEME ACCENTS
+       ========================================================================== */
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --bg-tertiary: #f1f5f9;
+      --bg-card: #ffffff;
+      
+      --text-primary: #090d16;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      
+      /* Master Primary Azure */
+      --primary: #0284c7;
+      --primary-hover: #0369a1;
+      --primary-light: #e0f2fe;
+      --primary-glow: rgba(2, 132, 199, 0.18);
+      
+      /* Platform & Section Color Themes */
+      --fb-blue: #1877f2;
+      --fb-light: #e7f3ff;
+      --ig-gradient: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+      --ig-rose: #e1306c;
+      --ig-light: #fdf2f8;
+      --tt-teal: #00f2fe;
+      --tt-red: #fe2c55;
+      --tt-dark: #0f172a;
+      --tg-blue: #229ed9;
+      --tg-light: #e0f2fe;
+      
+      /* Section Theme Colors */
+      --emerald-accent: #059669;
+      --emerald-light: #ecfdf5;
+      --indigo-accent: #4f46e5;
+      --indigo-light: #eef2ff;
+      --teal-accent: #0d9488;
+      --teal-light: #f0fdfa;
+      --rose-accent: #e11d48;
+      --rose-light: #fff1f2;
+      --amber-accent: #d97706;
+      --amber-light: #fffbeb;
+      --sky-accent: #0284c7;
+      --sky-light: #f0f9ff;
+      
+      --border-subtle: #f1f5f9;
+      --border-medium: #e2e8f0;
+      --border-strong: #cbd5e1;
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --radius-full: 9999px;
+      
+      --shadow-sm: 0 2px 8px -2px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 8px 24px -4px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 16px 36px -6px rgba(15, 23, 42, 0.10), 0 4px 12px -2px rgba(15, 23, 42, 0.05);
+      --shadow-xl: 0 24px 50px -12px rgba(15, 23, 42, 0.12), 0 8px 20px -4px rgba(15, 23, 42, 0.06);
+    }
+
+    *, ::before, ::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Plus Jakarta Sans', 'Kantumruy Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Subtle Geometric Grid Texture */
+    .bg-grid-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: 
+        linear-gradient(to right, rgba(2, 132, 199, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(2, 132, 199, 0.035) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Constellation canvas */
+    #particle-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.65;
+    }
+
+    .relative-z {
+      position: relative;
+      z-index: 2;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-padding {
+      padding: 110px 0;
+      position: relative;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       SECTION BACKGROUND GRADIENT AMBIENCES (INDIVIDUALIZED THEMES)
+       ========================================================================== */
+    #hero {
+      background: radial-gradient(circle at 50% 10%, rgba(2, 132, 199, 0.04) 0%, rgba(255, 255, 255, 0) 70%), #ffffff;
+    }
+
+    #services {
+      background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.04) 0%, rgba(255, 255, 255, 0) 65%), #ffffff;
+    }
+
+    #pricing {
+      background: radial-gradient(circle at 50% 15%, rgba(16, 185, 129, 0.045) 0%, rgba(248, 250, 252, 1) 70%), #f8fafc;
+    }
+
+    #how-it-works {
+      background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.04) 0%, rgba(255, 255, 255, 0) 65%), #ffffff;
+    }
+
+    #features {
+      background: radial-gradient(circle at 50% 10%, rgba(13, 148, 136, 0.045) 0%, rgba(248, 250, 252, 1) 70%), #f8fafc;
+    }
+
+    #payment {
+      background: radial-gradient(circle at 50% 0%, rgba(225, 29, 72, 0.035) 0%, rgba(255, 255, 255, 0) 65%), #ffffff;
+    }
+
+    #reviews {
+      background: radial-gradient(circle at 50% 10%, rgba(245, 158, 11, 0.045) 0%, rgba(248, 250, 252, 1) 70%), #f8fafc;
+    }
+
+    #faq {
+      background: radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.035) 0%, rgba(255, 255, 255, 0) 65%), #ffffff;
+    }
+
+    /* ==========================================================================
+       GRADIENT TEXT ACCENTS
+       ========================================================================== */
+    .gradient-text-blue {
+      background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-emerald {
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-indigo {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-teal {
+      background: linear-gradient(135deg, #0d9488 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-rose {
+      background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-amber {
+      background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-sky {
+      background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ==========================================================================
+       FLOATING FROSTED GLASS NAVBAR & ANIMATED MICRO-STATES
+       ========================================================================== */
+    .header-wrapper {
+      position: fixed;
+      top: 18px;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      padding: 0 20px;
+      pointer-events: none;
+      transition: all 0.35s ease;
+    }
+
+    .navbar {
+      pointer-events: auto;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(226, 232, 240, 0.85);
+      border-radius: var(--radius-full);
+      padding: 9px 14px 9px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 10px 32px -6px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.03);
+      max-width: 1140px;
+      width: 100%;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .navbar.scrolled {
+      background: rgba(255, 255, 255, 0.96);
+      padding: 7px 12px 7px 18px;
+      box-shadow: 0 14px 40px -10px rgba(2, 132, 199, 0.16), 0 2px 8px rgba(0, 0, 0, 0.04);
+      border-color: rgba(2, 132, 199, 0.25);
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .logo-icon-wrap {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #ffffff;
+      border: 1.5px solid rgba(2, 132, 199, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .logo-icon-wrap::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg, transparent 40%, rgba(255, 255, 255, 0.6) 50%, transparent 60%);
+      transform: rotate(30deg) translateY(-100%);
+      animation: logoGleam 4s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    @keyframes logoGleam {
+      0%, 75% { transform: rotate(30deg) translateY(-120%); }
+      100% { transform: rotate(30deg) translateY(120%); }
+    }
+
+    .brand-logo:hover .logo-icon-wrap {
+      transform: scale(1.08);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
+    }
+
+    .brand-name-group {
+      display: flex;
+      flex-direction: column;
+      white-space: nowrap;
+    }
+
+    .brand-text {
+      font-size: 15.5px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .brand-text span {
+      background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-tag {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .brand-tag .status-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 6px #10b981;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+      flex-wrap: nowrap;
+    }
+
+    .nav-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 10px;
+      border-radius: var(--radius-full);
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .nav-link small {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+      background: rgba(2, 132, 199, 0.06);
+    }
+
+    .nav-link:hover small {
+      color: var(--primary);
+    }
+
+    .nav-cta-btn {
+      background: linear-gradient(135deg, #0284c7 0%, #0274b3 100%);
+      color: #ffffff;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 16px rgba(2, 132, 199, 0.35);
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .nav-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(2, 132, 199, 0.45);
+    }
+
+    /* Mobile Menu Hamburger Button */
+    .mobile-menu-btn {
+      display: none;
+      background: #f1f5f9;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-full);
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .mobile-menu-btn:hover {
+      background: #e2e8f0;
+      color: var(--primary);
+    }
+
+    /* Mobile Nav Drawer */
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 80px;
+      left: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(24px);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.2);
+      z-index: 99;
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      transform: translateY(-20px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .mobile-nav-drawer.open {
+      display: flex;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .mobile-nav-item {
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .mobile-nav-item:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: rgba(2, 132, 199, 0.2);
+    }
+
+    /* ==========================================================================
+       REDESIGNED SECTION HEADERS (THEMATIC BADGES & GRADIENTS)
+       ========================================================================== */
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 56px auto;
+      position: relative;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+      transition: transform 0.3s ease;
+    }
+
+    .section-eyebrow:hover {
+      transform: scale(1.04);
+    }
+
+    /* Eyebrow Color Variations */
+    .eyebrow-blue {
+      background: rgba(2, 132, 199, 0.08);
+      color: #0284c7;
+      border: 1px solid rgba(2, 132, 199, 0.25);
+    }
+
+    .eyebrow-emerald {
+      background: rgba(16, 185, 129, 0.09);
+      color: #059669;
+      border: 1px solid rgba(16, 185, 129, 0.28);
+    }
+
+    .eyebrow-indigo {
+      background: rgba(79, 70, 229, 0.08);
+      color: #4f46e5;
+      border: 1px solid rgba(79, 70, 229, 0.25);
+    }
+
+    .eyebrow-teal {
+      background: rgba(13, 148, 136, 0.09);
+      color: #0d9488;
+      border: 1px solid rgba(13, 148, 136, 0.28);
+    }
+
+    .eyebrow-rose {
+      background: rgba(225, 29, 72, 0.08);
+      color: #e11d48;
+      border: 1px solid rgba(225, 29, 72, 0.25);
+    }
+
+    .eyebrow-amber {
+      background: rgba(245, 158, 11, 0.1);
+      color: #d97706;
+      border: 1px solid rgba(245, 158, 11, 0.28);
+    }
+
+    .eyebrow-sky {
+      background: rgba(6, 182, 212, 0.09);
+      color: #0284c7;
+      border: 1px solid rgba(6, 182, 212, 0.28);
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .eyebrow-blue .eyebrow-dot { background: #0284c7; box-shadow: 0 0 6px #0284c7; }
+    .eyebrow-emerald .eyebrow-dot { background: #10b981; box-shadow: 0 0 6px #10b981; }
+    .eyebrow-indigo .eyebrow-dot { background: #4f46e5; box-shadow: 0 0 6px #4f46e5; }
+    .eyebrow-teal .eyebrow-dot { background: #0d9488; box-shadow: 0 0 6px #0d9488; }
+    .eyebrow-rose .eyebrow-dot { background: #e11d48; box-shadow: 0 0 6px #e11d48; }
+    .eyebrow-amber .eyebrow-dot { background: #f59e0b; box-shadow: 0 0 6px #f59e0b; }
+    .eyebrow-sky .eyebrow-dot { background: #06b6d4; box-shadow: 0 0 6px #06b6d4; }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+      line-height: 1.35;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      padding: 155px 0 85px 0;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-light);
+      border: 1px solid rgba(2, 132, 199, 0.25);
+      color: var(--primary);
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 10px rgba(2, 132, 199, 0.1);
+    }
+
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.6);
+      animation: pulse-ring 2s infinite cubic-bezier(0.66, 0, 0, 1);
+    }
+
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.6); }
+      70% { box-shadow: 0 0 0 10px rgba(2, 132, 199, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0); }
+    }
+
+    .hero-title {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .hero-title .highlight {
+      background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-desc {
+      font-size: 16.5px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 32px;
+      max-width: 580px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 36px;
+      background: var(--bg-secondary);
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-medium);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .metric-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .metric-number {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    .metric-label {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 30px;
+      border-radius: var(--radius-full);
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 24px -4px rgba(2, 132, 199, 0.4);
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -4px rgba(2, 132, 199, 0.5);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--text-primary);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-medium);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-secondary);
+      border-color: var(--border-strong);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       HERO CARD (MODERN LIVE GROWTH ENGINE CONSOLE)
+       ========================================================================== */
+    .hero-console-shell {
+      position: relative;
+      border-radius: var(--radius-xl);
+      padding: 10px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 249, 255, 0.8));
+      border: 1px solid rgba(2, 132, 199, 0.2);
+      box-shadow: 0 25px 60px -15px rgba(2, 132, 199, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+    }
+
+    /* Floating Micro-Notification Badges */
+    .floating-pill-top {
+      position: absolute;
+      top: -18px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      padding: 7px 16px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.2);
+      font-size: 12px;
+      font-weight: 700;
+      color: #065f46;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 10;
+      animation: floatBadge 3s ease-in-out infinite alternate;
+    }
+
+    .floating-pill-bottom {
+      position: absolute;
+      bottom: -18px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      padding: 7px 16px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(2, 132, 199, 0.3);
+      box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.2);
+      font-size: 12px;
+      font-weight: 700;
+      color: #0369a1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 10;
+      animation: floatBadge 3s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes floatBadge {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-6px); }
+    }
+
+    .growth-console-card {
+      background: #ffffff;
+      border-radius: calc(var(--radius-xl) - 4px);
+      border: 1px solid var(--border-medium);
+      padding: 22px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+    }
+
+    /* Console Top Header */
+    .console-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 12px;
+    }
+
+    .console-mac-dots {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mac-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .mac-dot.red { background: #ef4444; }
+    .mac-dot.yellow { background: #f59e0b; }
+    .mac-dot.green { background: #10b981; }
+
+    .console-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .console-brand-text {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .console-ver-pill {
+      font-size: 10px;
+      font-weight: 800;
+      background: #e0f2fe;
+      color: #0284c7;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    .console-status-pill {
+      font-size: 11px;
+      font-weight: 700;
+      color: #059669;
+      background: rgba(16, 185, 129, 0.1);
+      padding: 3px 9px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .pulse-dot-green {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 6px #10b981;
+    }
+
+    /* Platform Switcher Row */
+    .console-platform-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      background: #f8fafc;
+      padding: 4px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .plat-tab-item {
+      padding: 8px 4px;
+      border-radius: var(--radius-sm);
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .plat-tab-item:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .plat-tab-item.active {
+      background: #ffffff;
+      color: var(--primary);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      font-weight: 800;
+    }
+
+    .plat-tab-item.active.fb-active { color: #1877f2; }
+    .plat-tab-item.active.ig-active { color: #e1306c; }
+    .plat-tab-item.active.tt-active { color: #0f172a; }
+    .plat-tab-item.active.tg-active { color: #0284c7; }
+
+    /* Live Simulated Account Card */
+    .console-account-preview {
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .account-preview-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .account-identity {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .account-avatar-ring {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      padding: 2px;
+      background: linear-gradient(135deg, #0284c7, #06b6d4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
+    }
+
+    .account-avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .account-avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #0f172a;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-brand-logo {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      border: 1.5px solid rgba(2, 132, 199, 0.25);
+      box-shadow: 0 4px 16px rgba(2, 132, 199, 0.2);
+      margin: 0 auto 12px auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .account-meta {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .account-name-row {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .verified-blue-badge {
+      width: 15px;
+      height: 15px;
+      background: #0284c7;
+      color: #ffffff;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    .account-handle-row {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .instant-speed-pill {
+      font-size: 10.5px;
+      font-weight: 800;
+      color: #0284c7;
+      background: #e0f2fe;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Live Growth Trajectory Bar */
+    .growth-trajectory-box {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .trajectory-numbers {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12.5px;
+    }
+
+    .traj-current {
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    .traj-target {
+      font-weight: 800;
+      color: #0284c7;
+    }
+
+    .traj-surge-tag {
+      background: #dcfce7;
+      color: #15803d;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 800;
+      margin-left: 4px;
+    }
+
+    .growth-progress-track {
+      width: 100%;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .growth-progress-fill {
+      height: 100%;
+      width: 78%;
+      background: linear-gradient(90deg, #0284c7 0%, #06b6d4 100%);
+      border-radius: var(--radius-full);
+      position: relative;
+      transition: width 0.4s ease;
+      animation: surgePulse 2s infinite ease-in-out;
+    }
+
+    @keyframes surgePulse {
+      0% { filter: brightness(1); }
+      50% { filter: brightness(1.2); }
+      100% { filter: brightness(1); }
+    }
+
+    /* Interactive Package Tiers Grid */
+    .console-tiers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .console-tier-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border-medium);
+      border-radius: var(--radius-md);
+      padding: 12px 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      position: relative;
+    }
+
+    .console-tier-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12);
+    }
+
+    .console-tier-card.active {
+      border-color: #0284c7;
+      background: #f0f9ff;
+      box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2), 0 6px 16px rgba(2, 132, 199, 0.15);
+    }
+
+    .tier-ribbon-tag {
+      position: absolute;
+      top: -8px;
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #ffffff;
+      font-size: 8.5px;
+      font-weight: 800;
+      padding: 1px 7px;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.04em;
+    }
+
+    .tier-ribbon-vip {
+      background: linear-gradient(135deg, #d97706, #b45309);
+    }
+
+    .console-tier-amount {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-top: 4px;
+    }
+
+    .console-tier-price {
+      font-size: 15px;
+      font-weight: 800;
+      color: #0284c7;
+    }
+
+    .console-tier-note {
+      font-size: 10px;
+      color: var(--text-secondary);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    /* Direct Link Input Box */
+    .console-input-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .console-input-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .input-field-shell {
+      display: flex;
+      align-items: center;
+      background: #f8fafc;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-md);
+      padding: 8px 12px;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .input-field-shell:focus-within {
+      background: #ffffff;
+      border-color: #0284c7;
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    .input-link-field {
+      width: 100%;
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--text-primary);
+      font-family: inherit;
+    }
+
+    /* Hero Instant Boost Button */
+    .hero-boost-action-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: #ffffff;
+      border: none;
+      padding: 13px 20px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-boost-action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(2, 132, 199, 0.45);
+    }
+
+    /* Trust Row */
+    .console-trust-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+
+    .console-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* ==========================================================================
+       SERVICES SECTION WITH 3D IMAGE SHOWCASE & BESPOKE PLATFORM CARDS
+       ========================================================================== */
+    .services-showcase-card {
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-xl);
+      padding: 12px;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 36px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .services-showcase-card:hover {
+      box-shadow: 0 16px 40px -8px rgba(37, 99, 235, 0.15);
+      border-color: #2563eb;
+    }
+
+    .services-showcase-image-wrap {
+      position: relative;
+      border-radius: calc(var(--radius-xl) - 4px);
+      overflow: hidden;
+    }
+
+    .services-suite-img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .services-showcase-card:hover .services-suite-img {
+      transform: scale(1.02);
+    }
+
+    .services-img-tag {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Top Color Bar on Cards */
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3.5px;
+      transition: height 0.2s ease;
+    }
+
+    .service-card.fb-card::before { background: #1877f2; }
+    .service-card.ig-card::before { background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045); }
+    .service-card.tt-card::before { background: linear-gradient(90deg, #00f2fe, #fe2c55); }
+    .service-card.tg-card::before { background: #229ed9; }
+
+    .service-card.fb-card:hover {
+      transform: translateY(-5px);
+      border-color: #1877f2;
+      box-shadow: 0 16px 36px -6px rgba(24, 119, 242, 0.16);
+    }
+
+    .service-card.ig-card:hover {
+      transform: translateY(-5px);
+      border-color: #e1306c;
+      box-shadow: 0 16px 36px -6px rgba(225, 48, 108, 0.18);
+    }
+
+    .service-card.tt-card:hover {
+      transform: translateY(-5px);
+      border-color: #fe2c55;
+      box-shadow: 0 16px 36px -6px rgba(254, 44, 85, 0.18);
+    }
+
+    .service-card.tg-card:hover {
+      transform: translateY(-5px);
+      border-color: #229ed9;
+      box-shadow: 0 16px 36px -6px rgba(34, 158, 217, 0.18);
+    }
+
+    .service-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      transition: transform 0.25s ease;
+    }
+
+    .service-card:hover .service-icon-box {
+      transform: scale(1.08) rotate(3deg);
+    }
+
+    .service-icon-box.fb { background: linear-gradient(135deg, #1877f2, #0d65d9); }
+    .service-icon-box.ig { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
+    .service-icon-box.tt { background: #0f172a; }
+    .service-icon-box.tg { background: linear-gradient(135deg, #229ed9, #0284c7); }
+
+    .service-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .service-desc {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+
+    .service-tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* ==========================================================================
+       PRICING MATRIX & DYNAMIC FOLLOWER RANGE CALCULATOR
+       ========================================================================== */
+    .pricing-wrapper-box {
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-xl);
+      padding: 42px 38px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .platform-tabs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .plat-tab-btn {
+      padding: 10px 24px;
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid var(--border-medium);
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .plat-tab-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .plat-tab-btn.active {
+      background: #0284c7;
+      color: white;
+      border-color: #0284c7;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+    }
+
+    .pricing-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .pricing-card {
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--primary);
+    }
+
+    .pricing-card.popular {
+      border: 2px solid #0284c7;
+      box-shadow: 0 14px 36px -4px rgba(2, 132, 199, 0.22);
+      background: linear-gradient(180deg, rgba(224, 242, 254, 0.25) 0%, #ffffff 40%);
+    }
+
+    .popular-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      padding: 4px 16px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+    }
+
+    .pricing-card.enterprise {
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      background: linear-gradient(180deg, rgba(254, 243, 199, 0.25) 0%, #ffffff 40%);
+    }
+
+    .pricing-card.enterprise:hover {
+      border-color: #f59e0b;
+      box-shadow: 0 16px 36px -4px rgba(245, 158, 11, 0.2);
+    }
+
+    .pricing-card-header {
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 20px;
+    }
+
+    .pricing-tier-pill {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: 12px;
+    }
+
+    .pricing-tier-pill.vip {
+      color: #d97706;
+      background: var(--amber-light);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .pricing-card-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .pricing-value-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .pricing-amount {
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .pricing-period {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .pricing-features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .pricing-feature-item {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .feature-check-icon {
+      color: var(--emerald-accent);
+      font-weight: 800;
+    }
+
+    .pricing-card-btn {
+      margin-top: auto;
+      width: 100%;
+      padding: 12px;
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid var(--border-medium);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      transition: all 0.2s ease;
+    }
+
+    .pricing-card.popular .pricing-card-btn {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+    }
+
+    .pricing-card-btn:hover {
+      background: var(--primary-hover);
+      color: white;
+      border-color: var(--primary-hover);
+    }
+
+    /* Range Slider Section */
+    .slider-calculator-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .slider-header-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .slider-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .slider-count-badge {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+      background: #ffffff;
+      padding: 6px 18px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-medium);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .custom-range-slider {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .custom-range-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--primary);
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.5);
+      border: 3px solid #ffffff;
+      transition: transform 0.15s ease;
+    }
+
+    .custom-range-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    .slider-marks {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+
+    .slider-total-summary {
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-md);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .price-calc-digits {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .price-calc-digits small {
+      font-size: 14px;
+      color: var(--text-secondary);
+      font-weight: 600;
+      margin-left: 6px;
+    }
+
+    /* ==========================================================================
+       HOW IT WORKS SECTION WITH 3D PROCESS VISUAL & 4 THEMED STEPS
+       ========================================================================== */
+    .workflow-visual-card {
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-xl);
+      padding: 12px;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 36px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .workflow-visual-card:hover {
+      box-shadow: 0 16px 40px -8px rgba(99, 102, 241, 0.15);
+      border-color: #4f46e5;
+    }
+
+    .workflow-img-wrap {
+      border-radius: calc(var(--radius-xl) - 4px);
+      overflow: hidden;
+    }
+
+    .workflow-process-img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .workflow-visual-card:hover .workflow-process-img {
+      transform: scale(1.02);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+
+    .step-card {
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .step-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* 4 Distinct Step Colors */
+    .step-card.step-1:hover { border-color: #3b82f6; box-shadow: 0 12px 30px -4px rgba(59, 130, 246, 0.18); }
+    .step-card.step-2:hover { border-color: #8b5cf6; box-shadow: 0 12px 30px -4px rgba(139, 92, 246, 0.18); }
+    .step-card.step-3:hover { border-color: #ec4899; box-shadow: 0 12px 30px -4px rgba(236, 72, 153, 0.18); }
+    .step-card.step-4:hover { border-color: #10b981; box-shadow: 0 12px 30px -4px rgba(16, 185, 129, 0.18); }
+
+    .step-number-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .step-card.step-1 .step-number-badge { background: #3b82f6; }
+    .step-card.step-2 .step-number-badge { background: #8b5cf6; }
+    .step-card.step-3 .step-number-badge { background: #ec4899; }
+    .step-card.step-4 .step-number-badge { background: #10b981; }
+
+    .step-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-card.step-1 .step-icon-box { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+    .step-card.step-2 .step-icon-box { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+    .step-card.step-3 .step-icon-box { background: rgba(236, 72, 153, 0.1); color: #ec4899; }
+    .step-card.step-4 .step-icon-box { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+
+    .step-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .step-desc {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       WHY CHOOSE US / SPOTLIGHT & 6 VALUE PILLARS
+       ========================================================================== */
+    .features-spotlight-card {
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-xl);
+      padding: 20px;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .spotlight-img-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .spotlight-shield-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .features-spotlight-card:hover .spotlight-shield-img {
+      transform: scale(1.03);
+    }
+
+    .spotlight-content {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding-right: 12px;
+    }
+
+    .spotlight-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.35;
+    }
+
+    .spotlight-desc {
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .spotlight-badges {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .spotlight-badge {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-medium);
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--emerald-accent);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .feature-item-card {
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .feature-item-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .feature-icon-wrapper {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s ease;
+    }
+
+    .feature-item-card:hover .feature-icon-wrapper {
+      transform: scale(1.1);
+    }
+
+    /* 6 Unique Feature Icon Colors */
+    .icon-blue { background: rgba(2, 132, 199, 0.1); color: #0284c7; }
+    .icon-amber { background: rgba(245, 158, 11, 0.12); color: #d97706; }
+    .icon-green { background: rgba(16, 185, 129, 0.1); color: #059669; }
+    .icon-purple { background: rgba(139, 92, 246, 0.1); color: #7c3aed; }
+    .icon-indigo { background: rgba(79, 70, 229, 0.1); color: #4f46e5; }
+    .icon-rose { background: rgba(225, 29, 72, 0.1); color: #e11d48; }
+
+    .feature-item-card:hover.feat-blue { border-color: #0284c7; }
+    .feature-item-card:hover.feat-amber { border-color: #f59e0b; }
+    .feature-item-card:hover.feat-green { border-color: #10b981; }
+    .feature-item-card:hover.feat-purple { border-color: #8b5cf6; }
+    .feature-item-card:hover.feat-indigo { border-color: #4f46e5; }
+    .feature-item-card:hover.feat-rose { border-color: #e11d48; }
+
+    .feature-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .feature-desc {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ==========================================================================
+       PAYMENT SHOWCASE (BAKONG KHQR & FINTECH 3D)
+       ========================================================================== */
+    .payment-showcase-box {
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-xl);
+      padding: 48px 40px;
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .payment-info {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .payment-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.35;
+    }
+
+    .payment-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .bank-logos-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .bank-chip {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-medium);
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-primary);
+      transition: transform 0.2s ease;
+    }
+
+    .bank-chip:hover {
+      transform: translateY(-2px);
+    }
+
+    .bank-chip.khqr {
+      background: linear-gradient(135deg, #e11d48, #be123c);
+      color: white;
+      border-color: #e11d48;
+      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
+    }
+
+    .bank-chip.aba {
+      background: #004f9f;
+      color: white;
+      border-color: #004f9f;
+    }
+
+    .bank-chip.wing {
+      background: #64b42b;
+      color: white;
+      border-color: #64b42b;
+    }
+
+    .bank-chip.acleda {
+      background: #1b365d;
+      color: white;
+      border-color: #1b365d;
+    }
+
+    .khqr-photo-card {
+      position: relative;
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-xl);
+      padding: 12px;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .khqr-showcase-photo {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: calc(var(--radius-xl) - 4px);
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .khqr-photo-card:hover .khqr-showcase-photo {
+      transform: scale(1.03);
+    }
+
+    .khqr-float-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.05em;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* ==========================================================================
+       CUSTOMER REVIEWS / TESTIMONIALS
+       ========================================================================== */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .review-card {
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .review-card:hover {
+      transform: translateY(-5px);
+      border-color: #f59e0b;
+      box-shadow: 0 14px 36px -6px rgba(245, 158, 11, 0.16);
+    }
+
+    .stars-row {
+      color: #f59e0b;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+
+    .review-quote {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .reviewer-profile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .reviewer-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      color: white;
+      font-weight: 800;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    }
+
+    .avatar-1 { background: linear-gradient(135deg, #8b5cf6, #ec4899); }
+    .avatar-2 { background: linear-gradient(135deg, #0284c7, #06b6d4); }
+    .avatar-3 { background: linear-gradient(135deg, #f59e0b, #e11d48); }
+
+    .reviewer-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .reviewer-name {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .reviewer-role {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       FAQ ACCORDION
+       ========================================================================== */
+    .faq-accordion-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: all 0.25s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-item.active {
+      border-color: #0284c7;
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.14);
+    }
+
+    .faq-question-btn {
+      width: 100%;
+      padding: 18px 22px;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--text-primary);
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+    }
+
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease;
+      color: #0284c7;
+      flex-shrink: 0;
+    }
+
+    .faq-item.active .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+      padding: 0 22px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-answer-panel {
+      max-height: 300px;
+      padding-bottom: 20px;
+    }
+
+    /* ==========================================================================
+       PRE-FOOTER CTA BANNER WITH 3D ROCKET IMAGE
+       ========================================================================== */
+    .prefooter-banner {
+      background: linear-gradient(135deg, #0284c7 0%, #2563eb 50%, #4f46e5 100%);
+      border-radius: var(--radius-xl);
+      padding: 44px;
+      color: white;
+      box-shadow: 0 24px 50px -10px rgba(37, 99, 235, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .prefooter-content-wrap {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .prefooter-text-side {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .cta-mini-tag {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+    }
+
+    .prefooter-title {
+      font-size: 30px;
+      font-weight: 800;
+      color: white;
+      line-height: 1.35;
+    }
+
+    .prefooter-desc {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.92);
+      line-height: 1.7;
+    }
+
+    .btn-white-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      color: #0284c7;
+      font-size: 15px;
+      font-weight: 800;
+      padding: 14px 32px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-white-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    }
+
+    .prefooter-image-side {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+    }
+
+    .prefooter-rocket-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .prefooter-banner:hover .prefooter-rocket-img {
+      transform: scale(1.04);
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .footer-section {
+      background: #f8fafc;
+      border-top: 1px solid var(--border-medium);
+      padding: 70px 0 30px 0;
+      margin-top: 60px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-heading {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12.5px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ==========================================================================
+       ORDER POPUP MODAL DIALOG
+       ========================================================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-xl);
+      padding: 36px 32px;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: var(--shadow-xl);
+      transform: scale(0.95);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+    }
+
+    .modal-overlay.open .modal-card {
+      transform: scale(1);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-medium);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .modal-input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .modal-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .modal-input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-medium);
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--text-primary);
+      outline: none;
+    }
+
+    .modal-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .services-grid, .pricing-cards-grid, .steps-grid, .features-grid, .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .features-spotlight-card, .payment-showcase-box, .prefooter-content-wrap {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: flex;
+      }
+      .hero-title {
+        font-size: 34px;
+      }
+      .hero-metrics {
+        grid-template-columns: 1fr;
+      }
+      .services-grid, .pricing-cards-grid, .steps-grid, .features-grid, .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+      .spotlight-badges {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .pricing-wrapper-box {
+        padding: 24px 16px;
+      }
+      .prefooter-banner {
+        padding: 30px 20px;
+      }
+    }
+
+    /* ==========================================================================
+       ANIMATIONS, CONTINUOUS 3D MOTION & MICRO-INTERACTIONS
+       ========================================================================== */
+    @keyframes gentleFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes rocketFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(-1.5deg); }
+    }
+
+    @keyframes thrusterGlow {
+      0%, 100% { filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.4)); }
+      50% { filter: drop-shadow(0 0 25px rgba(6, 182, 212, 0.8)); }
+    }
+
+    @keyframes laserScanAnim {
+      0% { top: 6%; opacity: 0; }
+      15% { opacity: 1; }
+      85% { opacity: 1; }
+      100% { top: 90%; opacity: 0; }
+    }
+
+    @keyframes pulseGlowBtn {
+      0%, 100% { box-shadow: 0 4px 16px rgba(2, 132, 199, 0.35); }
+      50% { box-shadow: 0 8px 24px rgba(2, 132, 199, 0.55), 0 0 18px rgba(6, 182, 212, 0.4); }
+    }
+
+    .laser-scan-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, #10b981 30%, #34d399 50%, #10b981 70%, transparent 100%);
+      box-shadow: 0 0 14px 4px rgba(16, 185, 129, 0.8);
+      animation: laserScanAnim 3.5s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .hero-showcase-img {
+      animation: gentleFloat 6s ease-in-out infinite;
+    }
+
+    .spotlight-shield-img {
+      animation: gentleFloat 5s ease-in-out infinite;
+    }
+
+    .services-suite-img {
+      animation: gentleFloat 5.5s ease-in-out infinite;
+    }
+
+    .prefooter-rocket-img {
+      animation: rocketFloat 4s ease-in-out infinite, thrusterGlow 2.5s ease-in-out infinite;
+    }
+
+    .hero-card-shell {
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      will-change: transform;
+    }
+
+    .replica-card {
+      transition: transform 0.15s ease-out;
+      will-change: transform;
+    }
+
+    .btn-primary::after, .btn-white-cta::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transform: rotate(30deg) translateY(-100%);
+      transition: transform 0.6s ease;
+    }
+
+    .btn-primary:hover::after, .btn-white-cta:hover::after {
+      transform: rotate(30deg) translateY(100%);
+    }
+
+    .nav-cta-btn {
+      animation: pulseGlowBtn 3s infinite;
+    }
+  </style>
+<body>
+  <!-- Interactive Dynamic Constellation Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <div class="relative-z">
+
+    <!-- FLOATING GLASS NAVBAR -->
+    <header class="header-wrapper">
+      <nav class="navbar" id="mainNavbar" aria-label="Main Navigation">
+        <a href="#" class="brand-logo">
+          <div class="logo-icon-wrap">
+            <img src="assets/brand-logo.jpg" alt="MR PANHA DIGITAL Logo" class="brand-logo-img">
+          </div>
+          <div class="brand-name-group">
+            <span class="brand-text">MR PANHA <span>DIGITAL</span></span>
+            <span class="brand-tag"><span class="status-dot"></span> OFFICIAL GROWTH AGENCY</span>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#services" class="nav-link">សេវាកម្ម <small>(Services)</small></a></li>
+          <li><a href="#pricing" class="nav-link">កញ្ចប់តម្លៃ <small>(Pricing)</small></a></li>
+          <li><a href="#how-it-works" class="nav-link">ដំណើរការ <small>(Workflow)</small></a></li>
+          <li><a href="#features" class="nav-link">លក្ខណៈពិសេស <small>(Features)</small></a></li>
+          <li><a href="#reviews" class="nav-link">មតិអតិថិជន <small>(Reviews)</small></a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <button class="nav-cta-btn" onclick="openOrderModal('General Inquiry', 'Custom')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.95-1.28 4.92-2.13 5.91-2.54 2.81-1.18 3.39-1.38 3.77-1.39.08 0 .27.02.39.12.1.08.13.2.14.28-.01.06.01.24 0 .38z"/>
+            </svg>
+            ទាក់ទងកុម្ម៉ង់
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <a href="#services" class="mobile-nav-item" onclick="toggleMobileMenu()">
+        <span>សេវាកម្ម (Services)</span>
+        <span>→</span>
+      </a>
+      <a href="#pricing" class="mobile-nav-item" onclick="toggleMobileMenu()">
+        <span>កញ្ចប់តម្លៃ (Pricing)</span>
+        <span>→</span>
+      </a>
+      <a href="#how-it-works" class="mobile-nav-item" onclick="toggleMobileMenu()">
+        <span>ដំណើរការ (How it Works)</span>
+        <span>→</span>
+      </a>
+      <a href="#features" class="mobile-nav-item" onclick="toggleMobileMenu()">
+        <span>លក្ខណៈពិសេស (Features)</span>
+        <span>→</span>
+      </a>
+      <a href="#reviews" class="mobile-nav-item" onclick="toggleMobileMenu()">
+        <span>មតិអតិថិជន (Reviews)</span>
+        <span>→</span>
+      </a>
+      <a href="#faq" class="mobile-nav-item" onclick="toggleMobileMenu()">
+        <span>សំណួរចម្លើយ (FAQ)</span>
+        <span>→</span>
+      </a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Hero Text & Metrics -->
+          <div class="hero-content">
+            <div class="eyebrow-badge">
+              <span class="pulse-dot"></span>
+              #1 SOCIAL MEDIA GROWTH IN CAMBODIA
+            </div>
+
+            <h1 class="hero-title">
+              បង្កើន <span class="highlight">Follower</span> លឿន រហ័ស និងមានសុវត្ថិភាព 100%
+            </h1>
+
+            <p class="hero-desc">
+              សេវាកម្មចាក់ Follower លើ <strong>Facebook Page & Profile, Instagram, TikTok</strong> ចាប់ពី <strong>1,000 ដល់ 1,000,000</strong> ឡើងទៅ ដោយមិនចាំបាច់ប្រើ Password ធានាសុវត្ថិភាពគណនីខ្ពស់បំផុត និងមានការធានាជូនយ៉ាងត្រឹមត្រូវ។
+            </p>
+
+            <div class="hero-metrics">
+              <div class="metric-item">
+                <span class="metric-number" id="count-followers">500K+</span>
+                <span class="metric-label">Followers Delivered</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number" id="count-satisfaction">99.8%</span>
+                <span class="metric-label">ពេញចិត្តសេវាកម្ម</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number" id="count-speed">5-15m</span>
+                <span class="metric-label">ល្បឿនដំណើរការ</span>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#pricing" class="btn-primary">
+                មើលកញ្ចប់តម្លៃ និងជ្រើសរើស
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </a>
+              <button class="btn-secondary" onclick="openOrderModal('General Inquiry', '$24.99')">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.95-1.28 4.92-2.13 5.91-2.54 2.81-1.18 3.39-1.38 3.77-1.39.08 0 .27.02.39.12.1.08.13.2.14.28-.01.06.01.24 0 .38z"/>
+                </svg>
+                ទាក់ទងតាម Telegram
+              </button>
+            </div>
+          </div>
+
+          <!-- MODERN LIVE GROWTH ENGINE CONSOLE -->
+          <div class="hero-console-shell">
+            
+            <!-- Top Floating Social Proof Pill -->
+            <div class="floating-pill-top">
+              <span class="pulse-dot-green"></span>
+              <span>🎉 Sok Pisey boosted +25k FB (ABA Verified)</span>
+            </div>
+
+            <!-- Bottom Floating Speed & Guarantee Pill -->
+            <div class="floating-pill-bottom">
+              <span>⚡ Average Delivery: 6.4 mins • 100% Non-Drop</span>
+            </div>
+
+            <div class="growth-console-card">
+
+              <!-- Console Header Bar -->
+              <div class="console-top-bar">
+                <div class="console-mac-dots">
+                  <span class="mac-dot red"></span>
+                  <span class="mac-dot yellow"></span>
+                  <span class="mac-dot green"></span>
+                </div>
+                <div class="console-title-wrap">
+                  <span class="console-brand-text">MR PANHA DIGITAL</span>
+                  <span class="console-ver-pill">ENGINE v3.2</span>
+                </div>
+                <div class="console-status-pill">
+                  <span class="pulse-dot-green"></span>
+                  SYSTEM READY
+                </div>
+              </div>
+
+              <!-- Platform Switcher Tabs -->
+              <div class="console-platform-bar">
+                <button class="plat-tab-item active fb-active" onclick="selectConsolePlatform(this, 'Facebook')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  Facebook
+                </button>
+                <button class="plat-tab-item ig-active" onclick="selectConsolePlatform(this, 'Instagram')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                  Instagram
+                </button>
+                <button class="plat-tab-item tt-active" onclick="selectConsolePlatform(this, 'TikTok')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V9.4a6.33 6.33 0 0 0-.85-.05A6.34 6.34 0 0 0 3.15 15.7a6.34 6.34 0 0 0 10.82 4.48 6.3 6.3 0 0 0 1.87-4.48V8.7a8.28 8.28 0 0 0 4.75 1.49V6.69h-1z"/>
+                  </svg>
+                  TikTok
+                </button>
+                <button class="plat-tab-item tg-active" onclick="selectConsolePlatform(this, 'Telegram')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.95-1.28 4.92-2.13 5.91-2.54 2.81-1.18 3.39-1.38 3.77-1.39.08 0 .27.02.39.12.1.08.13.2.14.28-.01.06.01.24 0 .38z"/>
+                  </svg>
+                  Telegram
+                </button>
+              </div>
+
+              <!-- Live Simulated Account Growth Box -->
+              <div class="console-account-preview">
+                <div class="account-preview-header">
+                  <div class="account-identity">
+                    <div class="account-avatar-ring">
+                      <img src="assets/brand-logo.jpg" alt="MR PANHA DIGITAL Logo" class="account-avatar-img" id="heroAvatarMark">
+                    </div>
+                    <div class="account-meta">
+                      <div class="account-name-row">
+                        <span id="heroAccountName">Mr Panha Digital</span>
+                        <span class="verified-blue-badge">✓</span>
+                      </div>
+                      <span class="account-handle-row" id="heroAccountHandle">@mrpanhadigital • Official Page</span>
+                    </div>
+                  </div>
+                  <div class="instant-speed-pill">
+                    ⚡ 5-15 MIN BOOST
+                  </div>
+                </div>
+
+                <!-- Growth Trajectory Numbers & Progress -->
+                <div class="growth-trajectory-box">
+                  <div class="trajectory-numbers">
+                    <span class="traj-current">បច្ចុប្បន្ន: <strong>14,250</strong></span>
+                    <span class="traj-target">
+                      គោលដៅ: <strong id="heroLiveGoal">39,250 Follow</strong>
+                      <span class="traj-surge-tag" id="heroSurgeTag">+25,000 (+175%)</span>
+                    </span>
+                  </div>
+                  <div class="growth-progress-track">
+                    <div class="growth-progress-fill" id="heroProgressFill" style="width: 82%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3 Interactive Boost Package Tiers -->
+              <div class="console-tiers-grid">
+                <!-- Tier 1 -->
+                <div class="console-tier-card" onclick="selectConsoleTier(this, '5,000 Follow', '$14.99', '5,000', 50, '+5,000 (+35%)')">
+                  <span class="console-tier-amount">5,000 Follow</span>
+                  <span class="console-tier-price">$14.99</span>
+                  <span class="console-tier-note">⚡ 5-10m • 0% Pass</span>
+                </div>
+
+                <!-- Tier 2 (Default Active / Popular) -->
+                <div class="console-tier-card active" onclick="selectConsoleTier(this, '25,000 Follow', '$49.99', '25,000', 82, '+25,000 (+175%)')">
+                  <span class="tier-ribbon-tag">🔥 MOST POPULAR</span>
+                  <span class="console-tier-amount">25,000 Follow</span>
+                  <span class="console-tier-price">$49.99</span>
+                  <span class="console-tier-note">✦ Free Likes • Refill</span>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="console-tier-card" onclick="selectConsoleTier(this, '100,000 Follow', '$149.99', '100,000', 98, '+100,000 (+700%)')">
+                  <span class="tier-ribbon-tag tier-ribbon-vip">👑 VIP DOMINANCE</span>
+                  <span class="console-tier-amount">100k Follow</span>
+                  <span class="console-tier-price">$149.99</span>
+                  <span class="console-tier-note">✦ 24/7 Agent • Non-Drop</span>
+                </div>
+              </div>
+
+              <!-- Direct Link Input Field -->
+              <div class="console-input-wrapper">
+                <label class="console-input-label">
+                  <span>ដាក់តំណភ្ជាប់ Link Page / Profile របស់អ្នក៖</span>
+                  <span style="font-size: 11px; color: #0284c7; font-weight: 600;">🔒 មិនត្រូវការ Password</span>
+                </label>
+                <div class="input-field-shell">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                  </svg>
+                  <input type="url" id="heroPageLinkInput" class="input-link-field" placeholder="https://facebook.com/yourpagename">
+                </div>
+              </div>
+
+              <!-- Hero Instant Boost Action Button -->
+              <button class="hero-boost-action-btn" onclick="orderFromHeroConsole()">
+                <span>🚀 ចាប់ផ្តើមចាក់ Follow ឥឡូវនេះ (BOOST NOW)</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </button>
+
+              <!-- Trust Strip -->
+              <div class="console-trust-row">
+                <div class="console-trust-item">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>គ្មាន Password 100%</span>
+                </div>
+                <div class="console-trust-item">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                  <span>ធានា Non-Drop</span>
+                </div>
+                <div class="console-trust-item">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                    <line x1="2" x2="22" y1="10" y2="10"></line>
+                  </svg>
+                  <span>Bakong KHQR / ABA</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES CATALOG SECTION WITH 3D SHOWCASE -->
+    <section id="services" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow eyebrow-blue">
+            <span class="eyebrow-dot"></span>
+            ✦ OUR SERVICES CATALOG
+          </span>
+          <h2 class="section-title">សេវាកម្មចម្បងដែលយើង <span class="gradient-text-blue">ផ្តល់ជូន</span></h2>
+          <p class="section-subtitle">
+            យើងផ្តល់ជូននូវសេវាកម្មបង្កើន Follower, Like, View, និង Share លើគ្រប់បណ្តាញសង្គមធំៗប្រកបដោយប្រសិទ្ធភាពខ្ពស់ និងសុវត្ថិភាព 100%។
+          </p>
+        </div>
+
+        <!-- 3D Services Suite Banner -->
+        <div class="services-showcase-card">
+          <div class="services-showcase-image-wrap">
+            <img src="assets/services-suite.jpg" alt="Social Media Growth Suite 3D" class="services-suite-img" />
+            <div class="services-img-tag">
+              <span class="live-pulse-dot"></span> MULTI-PLATFORM ACCELERATION SUITE (FB • IG • TIKTOK • TELEGRAM)
+            </div>
+          </div>
+        </div>
+
+        <div class="services-grid">
+          <!-- Facebook Card -->
+          <div class="service-card fb-card">
+            <div class="service-icon-box fb">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Facebook Growth</h3>
+            <p class="service-desc">
+              ចាក់ Follower លើ Page, Profile, Groups, Like Post & Video Views ប្រកបដោយសុវត្ថិភាព។
+            </p>
+            <div class="service-tags">
+              <span class="service-tag">Page Follow</span>
+              <span class="service-tag">Profile Follow</span>
+              <span class="service-tag">Post Likes</span>
+            </div>
+          </div>
+
+          <!-- Instagram Card -->
+          <div class="service-card ig-card">
+            <div class="service-icon-box ig">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Instagram Boost</h3>
+            <p class="service-desc">
+              បង្កើន Follower ពិត, Story Views, Reels Likes & Engagement ជួយអោយគណនីរីកចម្រើន។
+            </p>
+            <div class="service-tags">
+              <span class="service-tag">IG Followers</span>
+              <span class="service-tag">Reels Views</span>
+              <span class="service-tag">High Quality</span>
+            </div>
+          </div>
+
+          <!-- TikTok Card -->
+          <div class="service-card tt-card">
+            <div class="service-icon-box tt">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.68 6.34 6.34 0 0 0 9.33 22a6.34 6.34 0 0 0 6.34-6.34V9.05a8.16 8.16 0 0 0 4.92 1.63V7.22a4.88 4.88 0 0 1-1-.53z"/>
+              </svg>
+            </div>
+            <h3 class="service-title">TikTok Reach</h3>
+            <p class="service-desc">
+              Followers, Likes, Video Views លឿនរហ័ស ជួយរុញចូល For You Page របស់ TikTok។
+            </p>
+            <div class="service-tags">
+              <span class="service-tag">TikTok Follow</span>
+              <span class="service-tag">Video Views</span>
+              <span class="service-tag">Auto Likes</span>
+            </div>
+          </div>
+
+          <!-- Telegram Card -->
+          <div class="service-card tg-card">
+            <div class="service-icon-box tg">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.95-1.28 4.92-2.13 5.91-2.54 2.81-1.18 3.39-1.38 3.77-1.39.08 0 .27.02.39.12.1.08.13.2.14.28-.01.06.01.24 0 .38z"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Telegram Channels</h3>
+            <p class="service-desc">
+              បន្ថែមសមាជិក Channel & Group Members ពិតប្រាកដ និង Post Views សម្រាប់អាជីវកម្ម។
+            </p>
+            <div class="service-tags">
+              <span class="service-tag">Channel Members</span>
+              <span class="service-tag">Post Views</span>
+              <span class="service-tag">Real Active</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING SECTION WITH INTERACTIVE CALCULATOR -->
+    <section id="pricing" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow eyebrow-emerald">
+            <span class="eyebrow-dot"></span>
+            💎 TRANSPARENT PRICING
+          </span>
+          <h2 class="section-title">កញ្ចប់តម្លៃ និងការគណនា <span class="gradient-text-emerald">ដោយស្វ័យប្រវត្តិ</span></h2>
+          <p class="section-subtitle">
+            ជ្រើសរើសបណ្តាញសង្គម និងកញ្ចប់ Follower ដែលត្រូវនឹងតម្រូវការអាជីវកម្មរបស់អ្នក។ តម្លៃសមរម្យបំផុតក្នុងទីផ្សារ!
+          </p>
+        </div>
+
+        <div class="pricing-wrapper-box">
+          <!-- Platform Tabs -->
+          <div class="platform-tabs">
+            <button class="plat-tab-btn active" onclick="switchPlatformTab(this, 'Facebook')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              Facebook Page & Profile
+            </button>
+            <button class="plat-tab-btn" onclick="switchPlatformTab(this, 'Instagram')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              Instagram
+            </button>
+            <button class="plat-tab-btn" onclick="switchPlatformTab(this, 'TikTok')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.68 6.34 6.34 0 0 0 9.33 22a6.34 6.34 0 0 0 6.34-6.34V9.05a8.16 8.16 0 0 0 4.92 1.63V7.22a4.88 4.88 0 0 1-1-.53z"/></svg>
+              TikTok
+            </button>
+            <button class="plat-tab-btn" onclick="switchPlatformTab(this, 'Telegram')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.95-1.28 4.92-2.13 5.91-2.54 2.81-1.18 3.39-1.38 3.77-1.39.08 0 .27.02.39.12.1.08.13.2.14.28-.01.06.01.24 0 .38z"/></svg>
+              Telegram
+            </button>
+          </div>
+
+          <!-- 3 Curated Packages Grid -->
+          <div class="pricing-cards-grid">
+            <!-- Starter Tier -->
+            <div class="pricing-card">
+              <div class="pricing-card-header">
+                <span class="pricing-tier-pill">1k - 10k Follow</span>
+                <h3 class="pricing-card-title">កញ្ចប់ចាប់ផ្តើម</h3>
+                <div class="pricing-value-wrap">
+                  <span class="pricing-amount">$X.99</span>
+                  <span class="pricing-period">/ Package</span>
+                </div>
+              </div>
+              <ul class="pricing-features-list">
+                <li class="pricing-feature-item">
+                  <span class="feature-check-icon">✓</span> ល្បឿនលឿន (5-15 នាទី)
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check-icon">✓</span> មិនទាមទារ Password 100%
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check-icon">✓</span> ធានា Refill រយៈពេល 30 ថ្ងៃ
+                </li>
+              </ul>
+              <button class="pricing-card-btn" onclick="openOrderModal('Starter Package (1k-10k)', '$4.99')">
+                ជ្រើសរើសកញ្ចប់នេះ
+              </button>
+            </div>
+
+            <!-- Business Tier (Popular) -->
+            <div class="pricing-card popular">
+              <div class="popular-tag">POPULAR CHOICE</div>
+              <div class="pricing-card-header">
+                <span class="pricing-tier-pill">10k - 100k Follow</span>
+                <h3 class="pricing-card-title">កញ្ចប់អាជីវកម្ម</h3>
+                <div class="pricing-value-wrap">
+                  <span class="pricing-amount">$XX.99</span>
+                  <span class="pricing-period">/ Package</span>
+                </div>
+              </div>
+              <ul class="pricing-features-list">
+                <li class="pricing-feature-item">
+                  <span class="feature-check-icon">✓</span> គណនីមាន Profile & Activity ពិត
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check-icon">✓</span> ល្បឿនថេរ មិនប៉ះពាល់ Algorithm
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check-icon">✓</span> ធានា Lifetime Non-Drop
+                </li>
+              </ul>
+              <button class="pricing-card-btn" onclick="openOrderModal('Business Package (10k-100k)', '$24.99')">
+                ជ្រើសរើសកញ្ចប់នេះ
+              </button>
+            </div>
+
+            <!-- Enterprise Tier -->
+            <div class="pricing-card enterprise">
+              <div class="pricing-card-header">
+                <span class="pricing-tier-pill vip">VIP 100k - 1M Follow</span>
+                <h3 class="pricing-card-title">កញ្ចប់កម្រិតខ្ពស់</h3>
+                <div class="pricing-value-wrap">
+                  <span class="pricing-amount">$XXX.99</span>
+                  <span class="pricing-period">/ Package</span>
+                </div>
+              </div>
+              <ul class="pricing-features-list">
+                <li class="pricing-feature-item">
+                  <span class="feature-check-icon">✓</span> សមស្របសម្រាប់ Influencer & Brands
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check-icon">✓</span> Free ថែម Likes & Comments
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check-icon">✓</span> ជំនួយការផ្ទាល់ខ្លួន VIP 24/7
+                </li>
+              </ul>
+              <button class="pricing-card-btn" onclick="openOrderModal('Enterprise Package (100k-1M)', '$149.99')">
+                ជ្រើសរើសកញ្ចប់នេះ
+              </button>
+            </div>
+          </div>
+
+          <!-- Dynamic Follower Range Calculator -->
+          <div class="slider-calculator-card">
+            <div class="slider-header-wrap">
+              <span class="slider-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                ប្តូរកែសម្រួលចំនួន Follower តាមតម្រូវការផ្ទាល់ខ្លួន៖
+              </span>
+              <span class="slider-count-badge" id="calc-follower-count">10,000 Followers</span>
+            </div>
+
+            <input type="range" class="custom-range-slider" id="followerRange" min="1000" max="100000" step="1000" value="10000" oninput="updateFollowerCalc(this.value)">
+
+            <div class="slider-marks">
+              <span>1,000 Follow</span>
+              <span>25,000 Follow</span>
+              <span>50,000 Follow</span>
+              <span>100,000+ Follow</span>
+            </div>
+
+            <div class="slider-total-summary">
+              <div>
+                <span style="font-size: 13px; color: var(--text-secondary); display: block;">កញ្ចប់ដែលបានជ្រើសរើស: <strong id="calc-tier-name" style="color: var(--primary);">កញ្ចប់អាជីវកម្ម (10,000 Follow)</strong></span>
+                <div class="price-calc-digits" id="calc-price-display">$XX.99 USD <small>≈ 1XX,000 ៛</small></div>
+              </div>
+              <button class="btn-primary" onclick="orderFromSlider()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                បញ្ជាទិញឥឡូវនេះ (Order Now)
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS (4 CLEAN STEPS WITH 3D VISUAL) -->
+    <section id="how-it-works" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow eyebrow-indigo">
+            <span class="eyebrow-dot"></span>
+            ⚡ EASY 4-STEP PROCESS
+          </span>
+          <h2 class="section-title">ដំណើរការងាយៗត្រឹមតែ <span class="gradient-text-indigo">４ ជំហាន</span></h2>
+          <p class="section-subtitle">
+            មិនត្រូវការចំណាយពេលច្រើន មិនទាមទារ Password ដំណើរការលឿនរហ័ស និងមានសុវត្ថិភាពខ្ពស់បំផុត។
+          </p>
+        </div>
+
+        <!-- 3D Process Workflow Banner -->
+        <div class="workflow-visual-card">
+          <div class="workflow-img-wrap">
+            <img src="assets/workflow-process.jpg" alt="4-Step Growth Process 3D" class="workflow-process-img" />
+          </div>
+        </div>
+
+        <div class="steps-grid">
+          <!-- Step 1 -->
+          <div class="step-card step-1">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div class="step-number-badge">1</div>
+              <div class="step-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+              </div>
+            </div>
+            <h3 class="step-title">ជ្រើសរើសកញ្ចប់</h3>
+            <p class="step-desc">ជ្រើសរើសបណ្តាញសង្គម និងចំនួន Follower ដែលអ្នកចង់បានសម្រាប់អាជីវកម្ម។</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card step-2">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div class="step-number-badge">2</div>
+              <div class="step-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="step-title">ផ្ញើតំណភ្ជាប់ (Link)</h3>
+            <p class="step-desc">ផ្ញើតែតំណភ្ជាប់ Profile ឬ Page តែប៉ុណ្ណោះ គ្មានការសុំលេខសម្ងាត់ Password ឡើយ។</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card step-3">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div class="step-number-badge">3</div>
+              <div class="step-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                  <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+              </div>
+            </div>
+            <h3 class="step-title">ទូទាត់ប្រាក់</h3>
+            <p class="step-desc">ស្កេនទូទាត់ប្រាក់យ៉ាងងាយស្រួល និងរហ័សតាមរយៈ KHQR Bakong, ABA ឬ Wing។</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card step-4">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div class="step-number-badge">4</div>
+              <div class="step-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+            </div>
+            <h3 class="step-title">ទទួលបាន Follower</h3>
+            <p class="step-desc">ប្រព័ន្ធស្វ័យប្រវត្តិដំណើរការចាក់ Follow ជូនភ្លាមៗក្នុងរយៈពេល 5-15 នាទី។</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US / SPOTLIGHT & 6 PILLARS -->
+    <section id="features" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow eyebrow-teal">
+            <span class="eyebrow-dot"></span>
+            🛡️ WHY CHOOSE US
+          </span>
+          <h2 class="section-title">ហេតុអ្វីត្រូវជ្រើសរើស <span class="gradient-text-teal">MR PANHA DIGITAL</span>?</h2>
+          <p class="section-subtitle">
+            យើងផ្តល់ជូននូវបទពិសោធន៍សេវាកម្មដ៏ល្អឥតខ្ចោះ ទំនុកចិត្ត 100% និងការទទួលខុសត្រូវខ្ពស់។
+          </p>
+        </div>
+
+        <!-- 3D Security Shield Spotlight Banner -->
+        <div class="features-spotlight-card">
+          <div class="spotlight-img-wrap">
+            <img src="assets/security-shield.jpg" alt="100% Security and Lifetime Guarantee 3D" class="spotlight-shield-img" />
+          </div>
+          <div class="spotlight-content">
+            <span class="section-eyebrow eyebrow-emerald" style="align-self: flex-start;">
+              <span class="eyebrow-dot"></span> 100% BULLETPROOF PROTECTION
+            </span>
+            <h3 class="spotlight-title">សុវត្ថិភាពខ្ពស់ និងការធានាពេញមួយជីវិត</h3>
+            <p class="spotlight-desc">
+              រាល់ការបញ្ជាទិញទាំងអស់ត្រូវបានការពារដោយប្រព័ន្ធសុវត្ថិភាពស្វ័យប្រវត្តិកម្រិតខ្ពស់។ មិនត្រូវការលេខសម្ងាត់ (Password) មិនប៉ះពាល់ដល់ឯកជនភាព និងមានការធានាជូន Refill គ្រប់ពេលវេលា។
+            </p>
+            <div class="spotlight-badges">
+              <div class="spotlight-badge"><span class="badge-dot"></span> គ្មាន Password 100%</div>
+              <div class="spotlight-badge"><span class="badge-dot"></span> ល្បឿន 5-15 នាទី</div>
+              <div class="spotlight-badge"><span class="badge-dot"></span> Lifetime Non-Drop</div>
+              <div class="spotlight-badge"><span class="badge-dot"></span> Support VIP 24/7</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <div class="feature-item-card feat-blue">
+            <div class="feature-icon-wrapper icon-blue">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">សុវត្ថិភាព 100% គ្មាន Password</h3>
+            <p class="feature-desc">
+              យើងមិនដែលទាមទារលេខសម្ងាត់ (Password) ឬព័ត៌មានផ្ទាល់ខ្លួនរបស់អ្នកឡើយ។ គណនីរបស់អ្នកមានសុវត្ថិភាពដាច់ខាត។
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-item-card feat-amber">
+            <div class="feature-icon-wrapper icon-amber">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature-title">ល្បឿនលឿនទាន់ចិត្ត (Instant)</h3>
+            <p class="feature-desc">
+              ប្រព័ន្ធដំណើរការបញ្ជូន Follower ចាប់ផ្តើមភ្លាមៗបន្ទាប់ពីការទូទាត់ប្រាក់ ធានាបាននូវភាពរហ័សទាន់ចិត្ត។
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-item-card feat-green">
+            <div class="feature-icon-wrapper icon-green">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">ធានា Lifetime Non-Drop</h3>
+            <p class="feature-desc">
+              កញ្ចប់ Follower គុណភាពខ្ពស់ ធានាមិនងាយធ្លាក់ចុះ និងមានសេវា Refill បន្ថែមជូនដោយឥតគិតថ្លៃក្នុងករណីមានបញ្ហា។
+            </p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-item-card feat-purple">
+            <div class="feature-icon-wrapper icon-purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">គណនីមានគុណភាព (High Quality)</h3>
+            <p class="feature-desc">
+              Follower ទាំងអស់មានរូបភាព Profile ត្រឹមត្រូវ និងមានការចូលរួម Interaction ល្អ មិនធ្វើអោយគណនីរបស់អ្នកបាត់បង់ Trust។
+            </p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="feature-item-card feat-indigo">
+            <div class="feature-icon-wrapper icon-indigo">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+            </div>
+            <h3 class="feature-title">គាំទ្រ KHQR & គ្រប់ធនាគារ</h3>
+            <p class="feature-desc">
+              ទូទាត់ប្រាក់យ៉ាងងាយស្រួលតាមរយៈ ABA Bank, Bakong KHQR, Wing, ACLEDA និងធនាគារនានាក្នុងប្រទេសកម្ពុជា។
+            </p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="feature-item-card feat-rose">
+            <div class="feature-icon-wrapper icon-rose">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">សេវាកម្មប្រឹក្សា 24/7 Support</h3>
+            <p class="feature-desc">
+              ក្រុមការងារជំនាញចាំឆ្លើយតប និងដោះស្រាយរាល់ចម្ងល់របស់អ្នកគ្រប់ពេលវេលាតាមរយៈប្រព័ន្ធ Telegram ផ្ទាល់។
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAYMENT SHOWCASE (BAKONG KHQR WITH 3D FINTECH VISUAL) -->
+    <section id="payment" class="section-padding">
+      <div class="container">
+        <div class="payment-showcase-box">
+          <div class="payment-info">
+            <span class="section-eyebrow eyebrow-rose">
+              <span class="eyebrow-dot"></span>
+              💳 SECURE PAYMENT IN CAMBODIA
+            </span>
+            <h2 class="payment-title">ទូទាត់ប្រាក់លឿនរហ័សជាមួយ <span class="gradient-text-rose">Bakong KHQR & ABA</span></h2>
+            <p class="payment-desc">
+              ងាយស្រួល និងរហ័សទាន់ចិត្ត! គ្រាន់តែស្កេន QR Code តាមរយៈ App ធនាគារណាមួយនៅក្នុងប្រទេសកម្ពុជា ប្រព័ន្ធនឹងទទួលស្គាល់ការទូទាត់ភ្លាមៗ។
+            </p>
+            <div class="bank-logos-row">
+              <span class="bank-chip khqr">KHQR Bakong</span>
+              <span class="bank-chip aba">ABA ' PAY</span>
+              <span class="bank-chip wing">WING Bank</span>
+              <span class="bank-chip acleda">ACLEDA Mobile</span>
+            </div>
+          </div>
+
+          <!-- 3D KHQR Mobile Banking Card Mockup -->
+          <div class="khqr-photo-card">
+            <div class="laser-scan-bar"></div>
+            <img src="assets/khqr-banking.jpg" alt="Cambodian Banking & Bakong KHQR 3D" class="khqr-showcase-photo" />
+            <span class="khqr-float-badge">INSTANT SCAN TO PAY • 100% VERIFIED</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENT TESTIMONIALS -->
+    <section id="reviews" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow eyebrow-amber">
+            <span class="eyebrow-dot"></span>
+            ⭐ CLIENT TESTIMONIALS
+          </span>
+          <h2 class="section-title">មតិពិតពី <span class="gradient-text-amber">អតិថិជនរបស់យើង</span></h2>
+          <p class="section-subtitle">
+            អតិថិជនរាប់ពាន់បានបង្កើនការលក់ និងទំនុកចិត្តលើអាជីវកម្មរបស់ពួកគេជាមួយ MR PANHA DIGITAL។
+          </p>
+        </div>
+
+        <div class="reviews-grid">
+          <!-- Review 1 -->
+          <div class="review-card">
+            <div class="stars-row">★★★★★</div>
+            <p class="review-quote">
+              "សេវាកម្មលឿនខ្លាំងណាស់! ដាក់បញ្ជាទិញតែ 10 នាទី Follower ឡើងពេញ Page តែម្តង! បង្កើនការជឿទុកចិត្តពីអតិថិជនក្នុងការទិញទំនិញតាម Online បានច្រើនណាស់។"
+            </p>
+            <div class="reviewer-profile">
+              <div class="reviewer-avatar avatar-1">SP</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Sok Pisey</span>
+                <span class="reviewer-role">Online Fashion Store Owner</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-card">
+            <div class="stars-row">★★★★★</div>
+            <p class="review-quote">
+              "ចូលចិត្តត្រង់អត់សុំ Password! សុវត្ថិភាព 100% ធានាគុណភាពល្អ មិនដែលធ្លាក់ Follow ឡើយ។ ក្រុមការងារ Support ឆ្លើយតបរហ័ស និងរួសរាយរាក់ទាក់។"
+            </p>
+            <div class="reviewer-profile">
+              <div class="reviewer-avatar avatar-2">CH</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Chea Heng</span>
+                <span class="reviewer-role">Content Creator & Influencer</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div class="stars-row">★★★★★</div>
+            <p class="review-quote">
+              "តម្លៃសមរម្យបំផុតក្នុងទីផ្សារ បើប្រៀបធៀបនឹងកន្លែងផ្សេងៗ! បានប្រើប្រាស់កញ្ចប់ 50k Follower សម្រាប់ Page ហាងកាហ្វេ ឃើញថាដំណើរការល្អឥតខ្ចោះ!"
+            </p>
+            <div class="reviewer-profile">
+              <div class="reviewer-avatar avatar-3">VD</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Vannak Dara</span>
+                <span class="reviewer-role">Cafe & Restaurant Brand</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <section id="faq" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow eyebrow-sky">
+            <span class="eyebrow-dot"></span>
+            💡 FREQUENTLY ASKED QUESTIONS
+          </span>
+          <h2 class="section-title">សំណួរដែលត្រូវបាន <span class="gradient-text-sky">សួរញឹកញាប់</span></h2>
+          <p class="section-subtitle">
+            ស្វែងយល់បន្ថែមអំពីសេវាកម្ម និងចម្លើយចំពោះសំណួរដែលអ្នកអាចមានចម្ងល់។
+          </p>
+        </div>
+
+        <div class="faq-accordion-container">
+          <!-- FAQ 1 -->
+          <div class="faq-item active">
+            <button class="faq-question-btn" onclick="toggleFaq(this)">
+              <span>តើការចាក់ Follower ត្រូវការលេខសម្ងាត់ (Password) ដែរឬទេ?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-panel">
+              <strong>មិនត្រូវការដាច់ខាត!</strong> យើងត្រូវការត្រឹមតែតំណភ្ជាប់ (Link) នៃ Facebook Page, Profile, ឬ Instagram របស់អ្នកតែប៉ុណ្ណោះ។ គណនីរបស់អ្នកមានសុវត្ថិភាព 100% មិនប៉ះពាល់ដល់ឯកជនភាពឡើយ។
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" onclick="toggleFaq(this)">
+              <span>តើត្រូវចំណាយពេលប៉ុន្មានទើបទទួលបាន Follow គ្រប់ចំនួន?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-panel">
+              ដំណើរការចាប់ផ្តើមភ្លាមៗក្នុងរយៈពេល <strong>5 ទៅ 15 នាទី</strong> បន្ទាប់ពីការទូទាត់ប្រាក់ត្រូវបានបញ្ជាក់។ ចំនួន Follower នឹងកើនឡើងជាបន្តបន្ទាប់ដោយសុវត្ថិភាព។
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" onclick="toggleFaq(this)">
+              <span>តើ Follower នឹងធ្លាក់ចុះវិញដែរឬទេ (Drop Rate)?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-panel">
+              យើងប្រើប្រាស់គណនីគុណភាពខ្ពស់ ធានាមិនធ្លាក់ចុះ (Non-Drop)។ លើសពីនេះ យើងមានការធានាជូន Refill បន្ថែមដោយឥតគិតថ្លៃ ប្រសិនបើមានការធ្លាក់ចុះក្នុងរយៈពេលធានា។
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" onclick="toggleFaq(this)">
+              <span>តើអាចទូទាត់ប្រាក់តាមមធ្យោបាយណាខ្លះ?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer-panel">
+              យើងគាំទ្រការទូទាត់ប្រាក់យ៉ាងងាយស្រួលតាមរយៈ <strong>Bakong KHQR</strong> ដែលអាចស្កេនបានពីគ្រប់ Mobile App ធនាគារនៅកម្ពុជា រួមមាន ABA Bank, Wing, ACLEDA, Canadia និងធនាគារដទៃទៀត។
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRE-FOOTER CTA BANNER WITH 3D ROCKET IMAGE -->
+    <section class="section-padding" style="padding-bottom: 0;">
+      <div class="container">
+        <div class="prefooter-banner">
+          <div class="prefooter-content-wrap">
+            <div class="prefooter-text-side">
+              <span class="cta-mini-tag">🚀 READY FOR EXPONENTIAL GROWTH?</span>
+              <h2 class="prefooter-title">ត្រៀមខ្លួនរួចរាល់ក្នុងការបង្កើន Follower អាជីវកម្ម របស់អ្នកហើយឬនៅ?</h2>
+              <p class="prefooter-desc">
+                កុំឱ្យអាជីវកម្មរបស់អ្នកខកខានឱកាសទាក់ទាញអតិថិជនថ្មីៗ! ចាប់ផ្តើមបង្កើនភាពលេចធ្លោលើបណ្តាញសង្គមរបស់អ្នកនៅថ្ងៃនេះជាមួយ MR PANHA DIGITAL។
+              </p>
+              <button class="btn-white-cta" onclick="openOrderModal('Instant Boost', '$24.99')">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.95-1.28 4.92-2.13 5.91-2.54 2.81-1.18 3.39-1.38 3.77-1.39.08 0 .27.02.39.12.1.08.13.2.14.28-.01.06.01.24 0 .38z"/>
+                </svg>
+                ទាក់ទងបញ្ជាទិញឥឡូវនេះ (ORDER NOW)
+              </button>
+            </div>
+            <div class="prefooter-image-side">
+              <img src="assets/cta-rocket.jpg" alt="Social Media Growth Rocket 3D" class="prefooter-rocket-img" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-section">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Col 1 -->
+          <div class="footer-col">
+            <a href="#" class="brand-logo" style="margin-bottom: 6px;">
+              <div class="logo-icon-wrap">
+                <img src="assets/brand-logo.jpg" alt="MR PANHA DIGITAL Logo" class="brand-logo-img">
+              </div>
+              <div class="brand-name-group">
+                <span class="brand-text">MR PANHA <span>DIGITAL</span></span>
+                <span class="brand-tag"><span class="status-dot"></span> OFFICIAL GROWTH AGENCY</span>
+              </div>
+            </a>
+            <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.65;">
+              សេវាកម្មចាក់ Follower និង Digital Marketing លំដាប់កំពូលនៅកម្ពុជា។ ធានាលើការទទួលខុសត្រូវ សុវត្ថិភាព 100% និងល្បឿនលឿនទាន់ចិត្ត។
+            </p>
+          </div>
+
+          <!-- Col 2 -->
+          <div class="footer-col">
+            <h4 class="footer-heading">សេវាកម្ម (SERVICES)</h4>
+            <ul class="footer-links">
+              <li><a href="#pricing">Facebook Page Followers</a></li>
+              <li><a href="#pricing">Facebook Profile Followers</a></li>
+              <li><a href="#pricing">Instagram Followers</a></li>
+              <li><a href="#pricing">TikTok Followers & Views</a></li>
+              <li><a href="#pricing">Telegram Channel Members</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3 -->
+          <div class="footer-col">
+            <h4 class="footer-heading">តំណភ្ជាប់រហ័ស</h4>
+            <ul class="footer-links">
+              <li><a href="#">ទំព័រដើម (Home)</a></li>
+              <li><a href="#pricing">កញ្ចប់តម្លៃ (Pricing)</a></li>
+              <li><a href="#how-it-works">ដំណើរការ (How it Works)</a></li>
+              <li><a href="#features">លក្ខណៈពិសេស</a></li>
+              <li><a href="#faq">សំណួរចម្លើយ (FAQ)</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4 -->
+          <div class="footer-col">
+            <h4 class="footer-heading">ទំនាក់ទំនង (CONTACT)</h4>
+            <p style="font-size: 13.5px; color: var(--text-secondary);">Telegram: @mrpanhadigital</p>
+            <p style="font-size: 13.5px; color: var(--text-secondary);">Facebook: Mr Panha Digital</p>
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: #10b981; margin-top: 6px;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: #10b981;"></span>
+              Online 24/7 Available
+            </div>
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">Phnom Penh, Kingdom of Cambodia</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 MR PANHA DIGITAL. All Rights Reserved.</span>
+          <span>Designed with high-precision Khmer Typography & Clean UI.</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ORDER POPUP MODAL DIALOG -->
+  <div id="orderModal" class="modal-overlay" onclick="if(event.target === this) closeOrderModal()">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeOrderModal()">×</button>
+      
+      <div style="text-align: center;">
+        <img src="assets/brand-logo.jpg" alt="MR PANHA DIGITAL" class="modal-brand-logo">
+        <span class="section-eyebrow eyebrow-blue" style="margin-bottom: 8px;">
+          <span class="eyebrow-dot"></span> INSTANT ORDER VIA TELEGRAM
+        </span>
+        <h3 style="font-size: 20px; font-weight: 800; color: var(--text-primary);">ទម្រង់បញ្ជាទិញកញ្ចប់ Follower</h3>
+        <p style="font-size: 12.5px; color: var(--text-secondary); margin-top: 4px;">សូមបំពេញព័ត៌មានខាងក្រោមដើម្បីទាក់ទងកុម្ម៉ង់ភ្លាមៗ</p>
+      </div>
+
+      <div class="modal-input-group">
+        <label class="modal-label">បណ្តាញសង្គម (Platform)</label>
+        <input type="text" id="modal-platform" class="modal-input" value="Facebook Service" readonly>
+      </div>
+
+      <div class="modal-input-group">
+        <label class="modal-label">កញ្ចប់/ចំនួន Follower</label>
+        <input type="text" id="modal-package" class="modal-input" value="Business Package (10k-100k)" readonly>
+      </div>
+
+      <div class="modal-input-group">
+        <label class="modal-label">តំណភ្ជាប់ Link Page / Profile របស់អ្នក</label>
+        <input type="url" id="modal-link" class="modal-input" placeholder="https://facebook.com/yourpage" required>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--bg-secondary); border-radius: var(--radius-md);">
+        <span style="font-size: 13.5px; font-weight: 700; color: var(--text-secondary);">តម្លៃសរុប (Total Price):</span>
+        <span id="modal-price" style="font-size: 20px; font-weight: 800; color: var(--primary);">$XX.99</span>
+      </div>
+
+      <button class="btn-primary" style="width: 100%; justify-content: center; padding: 14px;" onclick="submitTelegramOrder()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.95-1.28 4.92-2.13 5.91-2.54 2.81-1.18 3.39-1.38 3.77-1.39.08 0 .27.02.39.12.1.08.13.2.14.28-.01.06.01.24 0 .38z"/>
+        </svg>
+        កុម្ម៉ង់តាម Telegram
+      </button>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // 1. Constellation Canvas Animation
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.4;
+        this.vy = (Math.random() - 0.5) * 0.4;
+        this.radius = Math.random() * 2 + 1;
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
+        if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(2, 132, 199, 0.4)';
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      const num = Math.min(Math.floor(window.innerWidth / 22), 65);
+      for (let i = 0; i < num; i++) {
+        particles.push(new Particle());
+      }
+    }
+    initParticles();
+    window.addEventListener('resize', initParticles);
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 110) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(2, 132, 199, ${0.15 * (1 - dist / 110)})`;
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // 2. Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileNavDrawer');
+      drawer.classList.toggle('open');
+    }
+
+    // 3. Navbar Blur-on-Scroll Interaction
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('mainNavbar');
+      if (window.scrollY > 40) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // 4. Hero Interactive Growth Console Handlers
+    let currentSelectedPlatform = 'Facebook';
+    let heroSelectedTier = '25,000 Follow';
+    let heroSelectedPrice = '$49.99';
+
+    const platformPresets = {
+      Facebook: {
+        avatar: 'MP',
+        name: 'Mr Panha Digital',
+        handle: '@mrpanhadigital • Official Page',
+        placeholder: 'https://facebook.com/yourpagename',
+        activeClass: 'fb-active'
+      },
+      Instagram: {
+        avatar: 'IG',
+        name: 'Mr Panha Official',
+        handle: '@mrpanhadigital • Instagram Creator',
+        placeholder: 'https://instagram.com/@yourprofile',
+        activeClass: 'ig-active'
+      },
+      TikTok: {
+        avatar: 'TT',
+        name: 'Panha Digital Studio',
+        handle: '@mrpanha_digital • TikTok Official',
+        placeholder: 'https://tiktok.com/@yourusername',
+        activeClass: 'tt-active'
+      },
+      Telegram: {
+        avatar: 'TG',
+        name: 'Mr Panha Agency',
+        handle: '@mrpanhadigital • Official Channel',
+        placeholder: 'https://t.me/yourchannelname',
+        activeClass: 'tg-active'
+      }
+    };
+
+    function selectConsolePlatform(btn, platform) {
+      document.querySelectorAll('.plat-tab-item').forEach(b => {
+        b.classList.remove('active', 'fb-active', 'ig-active', 'tt-active', 'tg-active');
+      });
+      const preset = platformPresets[platform] || platformPresets.Facebook;
+      btn.classList.add('active', preset.activeClass);
+      currentSelectedPlatform = platform;
+
+      // Update Live Simulated Preview
+      const avatarEl = document.getElementById('heroAvatarMark');
+      const nameEl = document.getElementById('heroAccountName');
+      const handleEl = document.getElementById('heroAccountHandle');
+      const inputEl = document.getElementById('heroPageLinkInput');
+      if (avatarEl) avatarEl.innerText = preset.avatar;
+      if (nameEl) nameEl.innerText = preset.name;
+      if (handleEl) handleEl.innerText = preset.handle;
+      if (inputEl) inputEl.placeholder = preset.placeholder;
+    }
+
+    function selectConsoleTier(card, name, price, countStr, progressWidth, surgeTag) {
+      document.querySelectorAll('.console-tier-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      heroSelectedTier = name;
+      heroSelectedPrice = price;
+
+      const numAdded = parseInt(countStr.replace(/,/g, ''));
+      const goal = (14250 + numAdded).toLocaleString() + ' Follow';
+      
+      const goalEl = document.getElementById('heroLiveGoal');
+      const surgeEl = document.getElementById('heroSurgeTag');
+      const fillEl = document.getElementById('heroProgressFill');
+      if (goalEl) goalEl.innerText = goal;
+      if (surgeEl) surgeEl.innerText = surgeTag;
+      if (fillEl) fillEl.style.width = progressWidth + '%';
+    }
+
+    function orderFromHeroConsole() {
+      const linkInput = document.getElementById('heroPageLinkInput');
+      const link = linkInput ? linkInput.value.trim() : '';
+      const modal = document.getElementById('orderModal');
+      document.getElementById('modal-platform').value = currentSelectedPlatform + ' Service';
+      document.getElementById('modal-package').value = heroSelectedTier;
+      document.getElementById('modal-price').innerText = heroSelectedPrice;
+      if (link) {
+        document.getElementById('modal-link').value = link;
+      }
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // 5. Platform Tabs for Pricing Section
+    function switchPlatformTab(btn, platform) {
+      document.querySelectorAll('.plat-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentSelectedPlatform = platform;
+      updateFollowerCalc(document.getElementById('followerRange').value);
+    }
+
+    // 6. Interactive Follower Range Calculator
+    function updateFollowerCalc(val) {
+      const count = parseInt(val);
+      const countFormatted = count.toLocaleString() + ' Followers';
+      document.getElementById('calc-follower-count').innerText = countFormatted;
+
+      let usdPrice = 0;
+      let tierName = '';
+
+      if (count <= 5000) {
+        usdPrice = (count * 0.0035).toFixed(2);
+        tierName = `កញ្ចប់ចាប់ផ្តើម (${count.toLocaleString()} Follow)`;
+      } else if (count <= 30000) {
+        usdPrice = (count * 0.0025).toFixed(2);
+        tierName = `កញ្ចប់អាជីវកម្ម (${count.toLocaleString()} Follow)`;
+      } else {
+        usdPrice = (count * 0.0018).toFixed(2);
+        tierName = `កញ្ចប់កម្រិតខ្ពស់ (${count.toLocaleString()} Follow)`;
+      }
+
+      const khrPrice = (usdPrice * 4100).toLocaleString();
+      document.getElementById('calc-tier-name').innerText = tierName;
+      document.getElementById('calc-price-display').innerHTML = `$${usdPrice} USD <small>≈ ${khrPrice} ៛</small>`;
+    }
+
+    function orderFromSlider() {
+      const count = document.getElementById('calc-follower-count').innerText;
+      const price = document.getElementById('calc-price-display').innerText.split(' ')[0];
+      openOrderModal(count, price);
+    }
+
+    // 7. Accordion FAQ
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    }
+
+    // 8. Order Modal Logic & Telegram Dispatch
+    function openOrderModal(packageName, price) {
+      const modal = document.getElementById('orderModal');
+      document.getElementById('modal-platform').value = currentSelectedPlatform + ' Service';
+      document.getElementById('modal-package').value = packageName;
+      document.getElementById('modal-price').innerText = price;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeOrderModal() {
+      const modal = document.getElementById('orderModal');
+      modal.classList.remove('open');
+      document.body.style.overflow = 'auto';
+    }
+
+    function submitTelegramOrder() {
+      const platform = document.getElementById('modal-platform').value;
+      const pkg = document.getElementById('modal-package').value;
+      const link = document.getElementById('modal-link').value.trim();
+      const price = document.getElementById('modal-price').innerText;
+
+      if (!link) {
+        alert('សូមបញ្ចូលតំណភ្ជាប់ (Link) Page ឬ Profile របស់អ្នក!');
+        return;
+      }
+
+      const message = `ជំរាបសួរ MR PANHA DIGITAL!\nខ្ញុំចង់កុម្ម៉ង់សេវាកម្ម:\n\n- សេវាកម្ម: ${platform}\n- កញ្ចប់: ${pkg}\n- តម្លៃ: ${price}\n- តំណភ្ជាប់ (Link): ${link}\n\nសូមជួយពិនិត្យ និងរៀបចំដំណើរការជូនខ្ញុំផង។ អរគុណ!`;
+      const encodedMsg = encodeURIComponent(message);
+      window.open(`https://t.me/mrpanhadigital?text=${encodedMsg}`, '_blank');
+      closeOrderModal();
+    }
+
+    // 9. GSAP & SCROLLTRIGGER MASTER ANIMATION SUITE
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Initial Hero Load Entrance Timeline
+      const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      heroTl
+        .fromTo(".header-wrapper", { y: -50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.85, ease: "back.out(1.2)" })
+        .fromTo(".eyebrow-badge", { y: 20, opacity: 0, scale: 0.9 }, { y: 0, opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.5)" }, "-=0.4")
+        .fromTo(".hero-title", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, "-=0.3")
+        .fromTo(".hero-desc", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, "-=0.4")
+        .fromTo(".metric-item", { y: 25, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.1, duration: 0.5 }, "-=0.3")
+        .fromTo(".hero-actions .btn-primary, .hero-actions .btn-secondary", { y: 20, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.1, duration: 0.5, ease: "back.out(1.4)" }, "-=0.3")
+        .fromTo(".hero-console-shell", { y: 40, opacity: 0, scale: 0.95 }, { y: 0, opacity: 1, scale: 1, duration: 0.85, ease: "back.out(1.3)" }, "-=0.5");
+
+      // Number Counters (Hero)
+      ScrollTrigger.create({
+        trigger: ".hero-metrics",
+        start: "top 95%",
+        once: true,
+        onEnter: () => {
+          gsap.to({ val: 0 }, {
+            val: 500,
+            duration: 2,
+            ease: "power2.out",
+            onUpdate: function() {
+              const el = document.getElementById('count-followers');
+              if (el) el.innerText = Math.floor(this.targets()[0].val) + 'K+';
+            }
+          });
+          gsap.to({ val: 0 }, {
+            val: 99.8,
+            duration: 2.2,
+            ease: "power2.out",
+            onUpdate: function() {
+              const el = document.getElementById('count-satisfaction');
+              if (el) el.innerText = this.targets()[0].val.toFixed(1) + '%';
+            }
+          });
+        }
+      });
+
+      // 3D Perspective Tilt on Growth Console Card
+      const heroShell = document.querySelector('.hero-console-shell');
+      const consoleCard = document.querySelector('.growth-console-card');
+      if (heroShell && consoleCard) {
+        heroShell.addEventListener('mousemove', (e) => {
+          const rect = heroShell.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          const rotX = -(y / (rect.height / 2)) * 6;
+          const rotY = (x / (rect.width / 2)) * 6;
+          gsap.to(consoleCard, {
+            rotationX: rotX,
+            rotationY: rotY,
+            transformPerspective: 1000,
+            ease: "power1.out",
+            duration: 0.25
+          });
+        });
+
+        heroShell.addEventListener('mouseleave', () => {
+          gsap.to(consoleCard, {
+            rotationX: 0,
+            rotationY: 0,
+            ease: "power2.out",
+            duration: 0.6
+          });
+        });
+      }
+
+      // Redesigned Section Headers Entrance Animation
+      gsap.utils.toArray('.section-header').forEach((hdr) => {
+        const eyebrow = hdr.querySelector('.section-eyebrow');
+        const title = hdr.querySelector('.section-title');
+        const subtitle = hdr.querySelector('.section-subtitle');
+
+        const tl = gsap.timeline({
+          scrollTrigger: { trigger: hdr, start: "top 88%", toggleActions: "play none none none" }
+        });
+
+        if (eyebrow) {
+          tl.fromTo(eyebrow, { y: 20, opacity: 0, scale: 0.88 }, { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.6)" });
+        }
+        if (title) {
+          tl.fromTo(title, { y: 25, opacity: 0 }, { y: 0, opacity: 1, duration: 0.65, ease: "power3.out" }, "-=0.3");
+        }
+        if (subtitle) {
+          tl.fromTo(subtitle, { y: 15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, "-=0.35");
+        }
+      });
+
+      // Services Section
+      gsap.fromTo(".services-showcase-card",
+        { y: 35, scale: 0.96, opacity: 0 },
+        {
+          scrollTrigger: { trigger: ".services-showcase-card", start: "top 90%", toggleActions: "play none none none" },
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out"
+        }
+      );
+
+      gsap.fromTo(".service-card",
+        { y: 35, opacity: 0 },
+        {
+          scrollTrigger: { trigger: ".services-grid", start: "top 90%", toggleActions: "play none none none" },
+          y: 0,
+          opacity: 1,
+          stagger: 0.1,
+          duration: 0.65,
+          ease: "back.out(1.2)"
+        }
+      );
+
+      // Pricing Section
+      gsap.fromTo(".platform-tabs",
+        { y: 20, opacity: 0 },
+        {
+          scrollTrigger: { trigger: ".platform-tabs", start: "top 92%", toggleActions: "play none none none" },
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out"
+        }
+      );
+
+      gsap.fromTo(".pricing-card",
+        { y: 40, opacity: 0 },
+        {
+          scrollTrigger: { trigger: ".pricing-cards-grid", start: "top 90%", toggleActions: "play none none none" },
+          y: 0,
+          opacity: 1,
+          stagger: 0.1,
+          duration: 0.7,
+          ease: "back.out(1.2)"
+        }
+      );
+
+      gsap.fromTo(".slider-calculator-card",
+        { y: 30, opacity: 0 },
+        {
+          scrollTrigger: { trigger: ".slider-calculator-card", start: "top 90%", toggleActions: "play none none none" },
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: "power2.out"
+        }
+      );
+
+      // How It Works (4 Steps)
+      gsap.fromTo(".workflow-visual-card",
+        { y: 35, scale: 0.96, opacity: 0 },
+        {
+          scrollTrigger: { trigger: ".workflow-visual-card", start: "top 90%", toggleActions: "play none none none" },
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out"
+        }
+      );
+
+      gsap.fromTo(".step-card",
+        { y: 35, scale: 0.92, opacity: 0 },
+        {
+          scrollTrigger: { trigger: ".steps-grid", start: "top 90%", toggleActions: "play none none none" },
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          stagger: 0.1,
+          duration: 0.65,
+          ease: "back.out(1.3)"
+        }
+      );
+
+      // Why Choose Us / Features
+      gsap.fromTo(".features-spotlight-card",
+        { y: 40, opacity: 0 },
+        {
+          scrollTrigger: { trigger: ".features-spotlight-card", start: "top 90%", toggleActions: "play none none none" },
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out"
+        }
+      );
+
+      gsap.fromTo(".feature-item-card",
+        { y: 30, opacity: 0 },
+        {
+          scrollTrigger: { trigger: ".features-grid", start: "top 90%", toggleActions: "play none none none" },
+          y: 0,
+          opacity: 1,
+          stagger: 0.08,
+          duration: 0.6,
+          ease: "power2.out"
+        }
+      );
+
+      // Payment Showcase & Bank Chips
+      gsap.fromTo(".payment-info",
+        { x: -30, opacity: 0 },
+        {
+          scrollTrigger: { trigger: ".payment-showcase-box", start: "top 90%", toggleActions: "play none none none" },
+          x: 0,
+          opacity: 1,
+          duration: 0.75,
+          ease: "power2.out"
+        }
+      );
+
+      gsap.fromTo(".khqr-photo-card",
+        { x: 30, scale: 0.95, opacity: 0 },
+        {
+          scrollTrigger: { trigger: ".payment-showcase-box", start: "top 90%", toggleActions: "play none none none" },
+          x: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out"
+        }
+      );
+
+      gsap.fromTo(".bank-chip",
+        { scale: 0.7, opacity: 0 },
+        {
+          scrollTrigger: { trigger: ".bank-logos-row", start: "top 95%", toggleActions: "play none none none" },
+          scale: 1,
+          opacity: 1,
+          stagger: 0.07,
+          duration: 0.5,
+          ease: "back.out(1.8)"
+        }
+      );
+
+      // Customer Reviews
+      gsap.fromTo(".review-card",
+        { y: 35, opacity: 0 },
+        {
+          scrollTrigger: { trigger: ".reviews-grid", start: "top 90%", toggleActions: "play none none none" },
+          y: 0,
+          opacity: 1,
+          stagger: 0.1,
+          duration: 0.65,
+          ease: "power2.out"
+        }
+      );
+
+      // FAQ Items
+      gsap.fromTo(".faq-item",
+        { y: 20, opacity: 0 },
+        {
+          scrollTrigger: { trigger: ".faq-accordion-container", start: "top 90%", toggleActions: "play none none none" },
+          y: 0,
+          opacity: 1,
+          stagger: 0.08,
+          duration: 0.55,
+          ease: "power2.out"
+        }
+      );
+
+      // Pre-Footer Banner
+      gsap.fromTo(".prefooter-banner",
+        { y: 40, scale: 0.96, opacity: 0 },
+        {
+          scrollTrigger: { trigger: ".prefooter-banner", start: "top 90%", toggleActions: "play none none none" },
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out"
+        }
+      );
+
+      // Footer
+      gsap.fromTo(".footer-col",
+        { y: 25, opacity: 0 },
+        {
+          scrollTrigger: { trigger: ".footer-grid", start: "top 95%", toggleActions: "play none none none" },
+          y: 0,
+          opacity: 1,
+          stagger: 0.08,
+          duration: 0.6,
+          ease: "power2.out"
+        }
+      );
+
+      // Refresh ScrollTrigger after all assets and fonts finish loading
+      window.addEventListener('load', () => {
+        ScrollTrigger.refresh();
+      });
+    });
+  </script>
+</body>
+</html>
