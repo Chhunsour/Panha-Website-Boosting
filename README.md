@@ -1,4 +1,15 @@
-# MR PANHA DIGITAL — #1 Social Media Growth Agency Website
+# MR PANHA DIGITAL — #1 Social Media Growth Agency Website 🚀
+
+<p align="center">
+  <sub>Developed by <strong>Seng Chhunsour</strong></sub>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Chhunsour"><img src="https://img.shields.io/badge/Author-Seng%20Chhunsour-FF5A1F?style=flat-square&logo=github&logoColor=white" alt="Author: Seng Chhunsour" /></a>
+  <img src="https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20GSAP-orange?style=flat-square" alt="Tech Stack" />
+  <img src="https://img.shields.io/badge/Animations-GSAP%20ScrollTrigger-green?style=flat-square" alt="GSAP" />
+  <img src="https://img.shields.io/badge/Deployment-Vercel-black?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
+</p>
 
 Official high-performance landing page and web application for **MR PANHA DIGITAL**, Cambodia's leading social media growth and follower acceleration agency.
 
@@ -63,6 +74,14 @@ This repository is pre-configured for static zero-config deployment on Vercel:
 
 ---
 
+## 👤 Author & Developer
+
+**Developed by Seng Chhunsour**
+- **GitHub:** [@Chhunsour](https://github.com/Chhunsour)
+- **Repository:** [https://github.com/Chhunsour/Panha-Website-Boosting](https://github.com/Chhunsour/Panha-Website-Boosting)
+
+---
+
 ## 📄 License
 
-&copy; 2026 MR PANHA DIGITAL. All rights reserved.
+Personal and client project. Developed by Seng Chhunsour. All rights reserved.
